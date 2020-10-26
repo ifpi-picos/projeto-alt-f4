@@ -1,0 +1,178 @@
+* {
+    padding: 0;
+    margin: 0;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+:root {
+    --cinza: #8b8b8b;
+}
+
+a {
+    color: #000000;
+}
+
+body {
+    background-color: var(--cinza);
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+}
+
+.container .cabecalho {
+    width: 100%;
+    height: 60px;
+    background-color: #c4c4c4;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 35px;
+}
+
+.logo-container .logo-img {
+    width: 40px;
+    height: 40px;
+    background: #5e8aff;
+    border-radius: 50%;
+
+    margin-right: 8px;
+}
+
+.menu-lista {
+    display: flex;
+    margin-right: 35px;
+}
+
+.menu-lista li {
+    margin-left: 30px;
+    list-style: none;
+}
+
+.menu-lista a {
+    font-size: 20px;
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.menu-lista a:hover {
+    color: #ffffff;
+}
+
+.banner {
+    width: 90vw;
+    margin: 80px auto 0;
+    height: 500px;
+    position: relative;
+
+    background-color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .banner-1 {
+    font-weight: 500px;
+    font-size: 70px;
+    box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.5);
+}
+
+.destaques {
+    width: 85vw;
+    height: 500px;
+    margin: 80px auto;
+
+    background: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.destaques h2 {
+    font-size: 42px;
+    font-weight: 900;
+}
+
+.conteudo-container {
+    display: flex;
+    justify-content: space-around;
+    align-self: stretch;
+
+}
+
+.destaques .conteudo {
+    width: 300px;
+    height: 270px;
+
+    background: #C6C6C6;
+}
+
+#ver-mais {
+    width: 170px;
+    height: 40px;
+    border-radius: 10px;
+    border: 0;
+
+    background: #c4c4c4;
+
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    transition: background .2s;
+}
+
+#ver-mais:hover {
+    background: #7c7c7cb0;
+}
+
+.rodape {
+    width: 100%;
+    height: 250px;
+
+    background: #ffffff;
+
+    display: flex;
+}
+
+.logo-rodape {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+.logo-rodape .logo-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    background-color: #5e8aff;
+
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+.logo-rodape h3 {
+    font-size: 28px;
+}
+
