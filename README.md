@@ -3,7 +3,7 @@
 # Projeto <alt+f4/>
 ### Esse projeto tem como objetivo a aprendizagem das tecnologias bases da web e ao mesmo tempo a função de ajudar a empresa Radical Dreamers a se mater atualizada de acordo com as novas tecnologias do mercado.
 
-## Tecnologia usadas 
+## Tecnologias usadas
 * HTML
 * CSS
 * Javascript
