@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -16,6 +17,7 @@ a {
 
 body {
     background: linear-gradient(#90C0DC, #ffffff) no-repeat;
+    font-family: 'Nunito', sans-serif;
 }
 
 .container {
@@ -149,7 +151,10 @@ body {
 }
 
 .modal .close-modal {
-    color: black;
+    color: #c40233;
+    background-color: #eee;
+    border-radius: 50%;
+    display: flex;
     position: absolute;
     /*oxiii paii*/
     right: 8px;
@@ -178,20 +183,23 @@ iframe {
     position: absolute;
     width: 40%;
     height: 100%;
-    margin: 3.6%;
+    margin: 3%;
     margin-left: 55%;
+}
+
+.game-content h1 {
+    color: #c40233;
 }
 
 .game-content h1,
 .game-content h2,
 .game-content h3 {
-    margin-bottom: 20px;
     text-align: center;
 }
 
 .game-content p {
     margin: 10px;
-    font-size: 17px;
+    font-size: 16px;
     opacity: 0.9;
     line-height: 28px;
 }
@@ -221,6 +229,7 @@ iframe {
 
 .game-contato {
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .game-contato a {
