@@ -14,7 +14,9 @@ a {
 }
 
 body {
-    background: linear-gradient(to bottom, #90C0DC 30%, #fff) no-repeat;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #90C0DC 10%, #fff) no-repeat;
 }
 
 body,
@@ -23,19 +25,21 @@ textarea {
     font-family: 'Nunito', sans-serif;
 }
 
-.container {
+/* .container {
     width: 100%;
     height: 100vh;
-}
+} */
 
 .container .cabecalho {
     width: 100%;
-    height: 70px;
+    height: 60px;
     background-color: #90C0DC;
     position: fixed;
     z-index: 2;
     left: 0;
     top: 0;
+
+    padding-top: 10px;
 
     display: flex;
     justify-content: space-between;
@@ -51,8 +55,8 @@ textarea {
 }
 
 .logo-container .logo-img {
-    width: 55px;
-    height: 55px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
 
     margin-right: 8px;
