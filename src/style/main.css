@@ -7,12 +7,10 @@
             box-sizing: border-box;
 }
 
-:root {
-    --cinza: #8b8b8b;
-}
 
 a {
     color: #fff;
+    text-decoration: none;
 }
 
 body {
@@ -85,7 +83,6 @@ textarea {
 
 .menu-lista a {
     font-size: 20px;
-    text-decoration: none;
     transition: color ease-in .2s;
 }
 
@@ -114,7 +111,7 @@ textarea {
 
 .destaques {
     width: 85vw;
-    height: 550px;
+    height: 570px;
     margin: 80px auto;
 
     background: #ffffff;
@@ -131,18 +128,26 @@ textarea {
     font-weight: 900;
 }
 
-.conteudo-container {
+.destaques .conteudo-container {
     display: flex;
     justify-content: space-around;
     align-self: stretch;
 
 }
 
-.destaques .conteudo {
+.destaques .conteudo .img {
     width: 300px;
     height: 270px;
 
     background: #C6C6C6;
+}
+
+.destaques .conteudo-container p {
+    font-size: 20px;
+    font-weight: 600;
+    width: 300px;
+
+    padding-top: 20px;
 }
 
 #ver-mais {
@@ -202,4 +207,5 @@ textarea {
 
 .rodape p {
     width: 270px;
+    font-weight: 600;
 }
