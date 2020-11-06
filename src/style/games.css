@@ -82,10 +82,18 @@ body {
     color: #0f26a6;
 }
 
+h1.title {
+    margin-top: 100px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 36px;
+    text-shadow: 2px 2px 5px #c40233;
+}
+
 .card {
     width: 90vw;
     height: 100vh;
-    margin: 80px 80px;
+    margin: 40px 80px;
     background-color: #ffffff;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -144,7 +152,7 @@ body {
 .modal {
     background-color: #ffffff;
     width: 95%;
-    height: 90%;
+    height: 100%;
     margin: 3% auto;
     position: relative;
     /* respeita o pai mulek*/
@@ -188,7 +196,10 @@ iframe {
 .desc-game {
     position: absolute;
     width: 100%;
-    height: 50%;
+    height: 100%;
+    text-align: justify;
+    text-transform: capitalize;
+    line-height: 1.2;
 }
 
 .game-content {
@@ -197,7 +208,8 @@ iframe {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
-    column-width: 25vw;
+    column-width: 49vw;
+    margin: 3%;
     width: 100vw;
     height: 100vh;
 }
@@ -210,13 +222,14 @@ iframe {
 .game-content h2,
 .game-content h3 {
     text-align: center;
+    margin: 10px;
 }
 
 .game-content p {
     margin: 10px;
     font-size: 16px;
     opacity: 0.9;
-    line-height: 28px;
+    line-height: 26px;
 }
 
 .game-content ul {
@@ -230,12 +243,15 @@ iframe {
     font-size: 18px;
 }
 
+.download-game {
+    text-align: center;
+}
+
 .download-game a {
     color: #306ebf;
     font-weight: bold;
     background: #eee;
-    display: flex;
-    justify-content: center;
+    display: inline-flex;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
