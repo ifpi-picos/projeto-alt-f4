@@ -32,14 +32,12 @@ textarea {
 
 .container .cabecalho {
     width: 100%;
-    height: 60px;
-    background-color: #90C0DC;
+    height: 65px;
+    background-color: #4e97c3;
     position: fixed;
     z-index: 2;
     left: 0;
     top: 0;
-
-    padding-top: 10px;
 
     display: flex;
     justify-content: space-between;
@@ -103,23 +101,27 @@ textarea {
     background-color: #ffffff;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .banner .banner-1 {
     font-weight: 500px;
     font-size: 70px;
-    box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 5px 3px rgba(255, 255, 255, 0.5);
+    color: #fff;
+
+    margin: 20px 0 0 20px;
+}
+
+.banner {
+    background-image: url(../../img/banner-1.png);
 }
 
 .destaques {
     width: 85vw;
     height: 570px;
     margin: 80px auto;
-
-    background: #ffffff;
-    box-shadow: 0px 3px 3px 2px rgba(0, 0, 0, 0.3);
 
     display: flex;
     flex-direction: column;
@@ -139,6 +141,10 @@ textarea {
 
 }
 
+.destaques .conteudo {
+    text-align: center;
+}
+
 .destaques .conteudo .img {
     width: 300px;
     height: 270px;
@@ -148,7 +154,6 @@ textarea {
 
 .destaques .conteudo-container p {
     font-size: 20px;
-    font-weight: 600;
     width: 300px;
 
     padding-top: 20px;
@@ -175,10 +180,13 @@ textarea {
 
 .rodape {
     width: 100%;
-    height: 250px;
+    height: 70px;
 
-    background: #ffffff;
+    display: flex;
+    align-items: center;
+}
 
+.rodape .rodape-info {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -186,30 +194,20 @@ textarea {
 
 .logo-rodape {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .logo-rodape .logo-img {
-    width: 100px;
-    height: 100px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
 
-    border: 1px solid #000000;
-
-    margin-left: 62px;
-    margin-bottom: 20px;
+    margin: 0 30px;
 }
 
 .logo-rodape .logo-img img {
     width: 100%;
 }
 
-.logo-rodape h3 {
-    font-size: 28px;
-}
-
 .rodape p {
-    width: 270px;
     font-weight: 600;
 }
