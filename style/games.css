@@ -82,10 +82,18 @@ body {
     color: #0f26a6;
 }
 
+h1.title {
+    margin-top: 100px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 36px;
+    text-shadow: 2px 2px 5px #c40233;
+}
+
 .card {
     width: 90vw;
     height: 100vh;
-    margin: 80px 80px;
+    margin: 40px 80px;
     background-color: #ffffff;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -136,21 +144,22 @@ body {
     width: 100%;
     height: 100%;
     position: fixed;
-    top: 80px;
+    top: 40px;
     opacity: 0;
     visibility: hidden;
 }
 
 .modal {
     background-color: #ffffff;
-    width: 90%;
-    height: 90%;
-    margin: 5vh auto;
+    width: 95%;
+    height: 100%;
+    margin: 3% auto;
     position: relative;
     /* respeita o pai mulek*/
 }
 
 .modal .close-modal {
+    z-index: 1;
     color: #c40233;
     background-color: #eee;
     border-radius: 50%;
@@ -171,9 +180,14 @@ body {
 }
 
 iframe {
+    z-index: 1;
     width: 50%;
-    height: 98%;
-    position: absolute;
+    height: 50%;
+    position: fixed;
+    bottom: 0;
+    margin: 0 25%;
+    padding: 2.5%;
+    position: fixed;
 }
 
 
@@ -181,10 +195,23 @@ iframe {
 
 .desc-game {
     position: absolute;
-    width: 40%;
+    width: 100%;
     height: 100%;
+    text-align: justify;
+    text-transform: capitalize;
+    line-height: 1.2;
+}
+
+.game-content {
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    column-width: 49vw;
     margin: 3%;
-    margin-left: 55%;
+    width: 100vw;
+    height: 100vh;
 }
 
 .game-content h1 {
@@ -195,13 +222,14 @@ iframe {
 .game-content h2,
 .game-content h3 {
     text-align: center;
+    margin: 10px;
 }
 
 .game-content p {
     margin: 10px;
     font-size: 16px;
     opacity: 0.9;
-    line-height: 28px;
+    line-height: 26px;
 }
 
 .game-content ul {
@@ -215,12 +243,15 @@ iframe {
     font-size: 18px;
 }
 
+.download-game {
+    text-align: center;
+}
+
 .download-game a {
     color: #306ebf;
     font-weight: bold;
-    background-color: #eee;
-    display: flex;
-    justify-content: center;
+    background: #eee;
+    display: inline-flex;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
