@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+    font-family: century-gothic;
+    src: url('../font/century-gothic.ttf');
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -14,7 +18,6 @@ a {
 }
 
 body {
-    font-family: 'Nunito', sans-serif;
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, #90C0DC 10%, #fff) no-repeat;
@@ -23,13 +26,9 @@ body {
 body,
 input,
 textarea {
-    font-family: 'Nunito', sans-serif;
+    font-family: century-gothic;
 }
 
-/* .container {
-    width: 100%;
-    height: 100vh;
-} */
 
 .container .cabecalho {
     width: 100%;
@@ -82,7 +81,7 @@ textarea {
 }
 
 .menu-lista a {
-    font-size: 20px;
+    font-size: 18px;
     transition: color ease-in .2s;
 }
 
@@ -90,32 +89,21 @@ textarea {
     color: #0f26a6;
 }
 
-.carrossel {
-    width: 90vw;
-    margin: 80px auto 0;
-    height: 550px;
-    position: relative;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+
+.swiper-container {
+    max-width: 90%;
+    height: 560px;
+    margin-top: 80px;
 }
 
-.carrossel .banner-1 {
-    font-weight: 500px;
-    font-size: 70px;
-    box-shadow: 2px 5px 3px rgba(255, 255, 255, 0.5);
-    color: #fff;
-
-    margin: 20px 0 0 20px;
+.swiper-slide img {
+    width: 100%;
 }
-
-
 
 .destaques {
     width: 85vw;
     height: 570px;
-    margin: 80px auto;
+    margin: 80px auto 80px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -139,8 +127,10 @@ textarea {
 
 .destaques .conteudo .img {
     width: 300px;
-    height: 270px;
-    background: #C6C6C6;
+}
+
+.destaques .conteudo .img img {
+    width: 100%;
 }
 
 .destaques .conteudo-container p {

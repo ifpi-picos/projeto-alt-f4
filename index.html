@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
   <link rel="stylesheet" href="style/main.css">
-  <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../img/logo/logo1.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="./font/century-gothic.ttf">
+  
   <title>Radical Dreamers</title>
   
 </head>
@@ -17,7 +20,7 @@
     <header class="cabecalho">
         <div class="logo-container">
           <div class="logo-img">
-            <img src="../img/logo0.png" alt="Logo Radical Dreamers">
+            <img src="./img/logo/logo1.png" alt="Logo Radical Dreamers">
           </div>
 
           <h2 class="logo-nome">Radical Dreamers</h2>
@@ -34,12 +37,19 @@
         </nav>
     </header>
 
-  
-    <section class="carrossel">
-      <div class="banner"><img src="" alt=""></div>
-      <div class="banner"><img src="" alt=""></div>
-      <div class="banner"><img src="" alt=""></div>
-      <div class="banner"><img src="" alt=""></div>
+    <section class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="./img/full hd/avelar.png" alt=""></div>
+        <div class="swiper-slide"><img src="./img/full hd/lendasrpg.png" alt=""></div>
+        <div class="swiper-slide"><img src="./img/full hd/MEMEMCARD.png" alt=""></div>
+        <div class="swiper-slide"><img src="./img/full hd/pushtrahs.png" alt=""></div>
+        <div class="swiper-slide"><img src="./img/full hd/REBORN.png" alt=""></div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </section>
 
     <section class="destaques">
@@ -48,21 +58,21 @@
         <div class="conteudo-container">
           <div class="conteudo">
               <div class="img">
-                
+                <img src="./img/900X900/AVELAR.png" alt="">
               </div>
 
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
           <div class="conteudo">
               <div class="img">
-  
+                <img src="./img/900X900/LENDAS RPG.png" alt="">
               </div>
 
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
           <div class="conteudo">
             <div class="img">
-  
+              <img src="./img/900X900/PUSHTRASH.png" alt="">
             </div>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -77,7 +87,7 @@
       <div class="rodape-info">
         <div class="logo-rodape">
           <div class="logo-img">
-            <img src="../img/logo0.png" alt="Logo Radical Dreamers">
+            <img src="../img/logo/logo1.png" alt="Logo Radical Dreamers">
           </div>
         </div>
   
@@ -91,5 +101,24 @@
       </div>
     </footer>
     
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper ('.swiper-container', {
+          spaceBetween: 30,
+          centeredSlides: true,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+    </script>
 </body>
 </html>
