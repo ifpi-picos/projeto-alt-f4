@@ -184,10 +184,11 @@ iframe {
     width: 50%;
     height: 50%;
     position: fixed;
-    bottom: 0;
+    bottom: 8%;
     margin: 0 25%;
     padding: 2.5%;
-    position: fixed;
+    border: 0;
+    position: absolute;
 }
 
 
@@ -198,7 +199,6 @@ iframe {
     width: 100%;
     height: 100%;
     text-align: justify;
-    text-transform: capitalize;
     line-height: 1.2;
 }
 
@@ -209,7 +209,7 @@ iframe {
     -moz-column-count: 2;
     column-count: 2;
     column-width: 49vw;
-    margin: 3%;
+    margin: 2%;
     width: 100vw;
     height: 100vh;
 }
@@ -222,25 +222,19 @@ iframe {
 .game-content h2,
 .game-content h3 {
     text-align: center;
-    margin: 10px;
 }
 
 .game-content p {
-    margin: 10px;
-    font-size: 16px;
+    font-size: 14px;
     opacity: 0.9;
-    line-height: 26px;
 }
 
 .game-content ul {
     list-style-type: decimal;
-    margin: 10px;
 }
 
 .game-content ul li {
-    line-height: 28px;
-    margin: 10px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .download-game {
@@ -260,7 +254,7 @@ iframe {
 
 .game-contato {
     text-align: center;
-    margin-bottom: 50px;
+    margin-top: 20px;
 }
 
 .game-contato a {
@@ -291,21 +285,24 @@ iframe {
 
 .rodape {
     width: 100%;
-    height: 250px;
-    background: #ffffff;
+    height: 70px;
     display: flex;
+    align-items: center;
+}
+
+.rodape .rodape-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .logo-rodape {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 40px;
 }
 
 .logo-rodape .logo-img {
-    width: 100px;
-    height: 100px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     background-color: #5e8aff;
     margin-left: 50px;
@@ -314,4 +311,12 @@ iframe {
 
 .logo-rodape h3 {
     font-size: 28px;
+}
+
+.logo-rodape .logo-img img {
+    width: 100%;
+}
+
+.rodape p {
+    font-weight: 600;
 }
