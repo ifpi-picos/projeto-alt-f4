@@ -19,6 +19,7 @@ a {
 body {
     width: 100%;
     height: 100%;
+    line-height: 1.5;
     background: linear-gradient(to bottom, #90C0DC 50%, #fff) no-repeat;
 }
 
@@ -30,7 +31,7 @@ textarea {
 
 .container {
     width: 100%;
-    height: 100vh;
+    height: 65px;
 }
 
 .cabecalho h2 {
@@ -102,7 +103,7 @@ textarea {
 }
 
 h1.title {
-    margin-top: 100px;
+    margin-top: 50px;
     text-align: center;
     color: #ffffff;
     font-size: 36px;
@@ -111,7 +112,7 @@ h1.title {
 
 .card {
     width: 90vw;
-    height: 100vh;
+    height: 90vh;
     margin: 40px 80px;
     background-color: #ffffff;
     display: grid;
@@ -153,151 +154,6 @@ h1.title {
 
 #ver-mais:hover {
     background: #7c7c7cb0;
-}
-
-
-/* ---- MODAL---- */
-
-.modal-overlay {
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 40px;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.modal {
-    background-color: #ffffff;
-    width: 95%;
-    height: 100%;
-    margin: 3% auto;
-    position: relative;
-    /* respeita o pai mulek*/
-}
-
-.modal .close-modal {
-    z-index: 1;
-    color: #c40233;
-    background-color: #eee;
-    border-radius: 50%;
-    display: flex;
-    position: absolute;
-    /*oxiii paii*/
-    right: 8px;
-    top: 8px;
-    cursor: pointer;
-}
-
-
-/* ---- MODAL ACTIVE ---- */
-
-.modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-iframe {
-    z-index: 1;
-    width: 50%;
-    height: 50%;
-    position: fixed;
-    bottom: 8%;
-    margin: 0 25%;
-    padding: 2.5%;
-    border: 0;
-    position: absolute;
-}
-
-
-/* ---- DESC GAME ----*/
-
-.desc-game {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    text-align: justify;
-    line-height: 1.2;
-}
-
-.game-content {
-    display: flex;
-    flex-wrap: wrap;
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-    column-width: 49vw;
-    margin: 2%;
-    width: 100vw;
-    height: 100vh;
-}
-
-.game-content h1 {
-    color: #c40233;
-}
-
-.game-content h1,
-.game-content h2,
-.game-content h3 {
-    text-align: center;
-}
-
-.game-content p {
-    font-size: 14px;
-    padding: 15px;
-    opacity: 0.9;
-}
-
-.game-content ul {
-    list-style-type: decimal;
-}
-
-.game-content ul li {
-    font-size: 16px;
-}
-
-.download-game {
-    text-align: center;
-}
-
-.download-game a {
-    color: #306ebf;
-    font-weight: bold;
-    background: #eee;
-    display: inline-flex;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    text-decoration: none;
-}
-
-.game-contato {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.game-contato a {
-    border-radius: 10px;
-    color: #306ebf;
-    font-weight: bold;
-    padding: 10px;
-    background-color: #eee;
-    text-decoration: none;
-}
-
-
-/* conteudo game oculto */
-
-.game-content {
-    display: none;
-}
-
-
-/* conteudo game ativo */
-
-.active2 {
-    display: block !important;
 }
 
 
