@@ -1,8 +1,4 @@
-@font-face {
-    font-family: century-gothic;
-    src: url('../font/century-gothic.ttf');
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -11,29 +7,26 @@
     box-sizing: border-box;
 }
 
-
 a {
-    color: #fff;
+    color: #282828;
     text-decoration: none;
+    text-align:justify;
+	text-justify:inter-word;
 }
 
 body {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, #90C0DC 50%, #fff) no-repeat;
+    background: linear-gradient(#90C0DC, #ffffff) no-repeat;
+    font-family: 'Nunito', sans-serif;
 }
 
-body,
-input,
-textarea {
-    font-family: century-gothic;
+content{
+    justify-content: center;
+    margin: 20px;
 }
-
 
 .container .cabecalho {
-    width: 100%;
-    height: 65px;
-    background-color: #4e97c3;
+    width: 100vw;
+    height: 60px;
     position: fixed;
     z-index: 2;
     left: 0;
@@ -51,24 +44,14 @@ textarea {
 }
 
 .logo-container .logo-img {
-    width: 52px;
-    height: 52px;
+    width: 40px;
+    height: 40px;
+    background: #5eccff;
     border-radius: 50%;
     margin-right: 8px;
 }
 
-.logo-container .logo-img img {
-    width: 100%;
-}
-
-.cabecalho h2 {
-    color: #ffffff;
-    transition: ease-in-out .2s;
-}
-
-.cabecalho h2:hover {
-    font-size: 25px;
-}
+/** Menu **/
 
 .menu-lista {
     display: flex;
@@ -81,85 +64,72 @@ textarea {
 }
 
 .menu-lista a {
-    font-size: 18px;
-    transition: color ease-in .2s;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color .2s;
 }
 
 .menu-lista a:hover {
-    color: #0f26a6;
+    color: #ffffff;
 }
 
-
-.swiper-container {
-    max-width: 90%;
-    height: 590px;
-    margin-top: 80px;
+.banner {
+    width: 100vw;
+    margin: 40px auto 0;
+    height: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.swiper-slide img {
-    width: 100%;
+.banner .banner-1 {
+    font-weight: 500px;
+    font-size: 70px;
 }
 
-.destaques {
+.area-de-noticias {
     width: 85vw;
-    height: 600px;
-    margin: 80px auto 80px;
+    height: 300px;
+    margin: 80px auto;
+    background: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
 
-.destaques h2 {
-    font-size: 42px;
-    font-weight: 900;
+/**********  cards **********/
+
+.flex-item{
+    height: 45%;
 }
 
-.destaques .conteudo-container {
+.l-card{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr) );
+    justify-content: center;
+    justify-items: center;
+    padding: 1;
+}
+
+.c-card{
     display: flex;
-    justify-content: space-around;
-    align-self: stretch;
+    flex-direction: column;
+    height: 400px;
+    width: 270px;
 }
 
-.destaques .conteudo {
-    text-align: center;
+.c-card img{
+    width: 270px;
+    height: 220px;
+    padding-bottom: 10px;
 }
 
-.destaques .conteudo .img {
-    width: 300px;
-}
 
-.destaques .conteudo .img img {
-    width: 100%;
-}
 
-.destaques .conteudo-container p {
-    font-size: 20px;
-    font-weight: 500;
-    width: 300px;
-
-    padding-top: 20px;
-}
-
-#ver-mais {
-    width: 150px;
-    height: 40px;
-    border-radius: 20px;
-    border: 0;
-
-    background: #306FBF;
-    cursor: pointer;
-
-    font-size: 17px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 600;
-    transition: background .2s;
-}
-
-#ver-mais:hover {
-    background: #2062b8;
-}
+/* Rodape  */
 
 
 .rodape {
@@ -228,3 +198,29 @@ textarea {
 .redes-sociais .img-social img:hover {
     width: 45px;
 }
+
+
+/* fontes */
+
+p span{
+    font-size: small;
+}
+
+p{
+    font-size: 20px;
+}
+
+.logo-rodape h3 {
+    font-size: 28px;
+}
+
+
+
+
+/** apresentação de noticias **/
+
+main{
+
+    margin: 20px 40px 20px 40px;
+}
+
