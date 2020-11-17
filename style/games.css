@@ -157,6 +157,42 @@ h1.title {
 }
 
 
+/* ---- GAME DESCRIPTION ---- */
+
+.desc-game {
+    height: 100vh;
+    margin: 40px 200px;
+    text-align: center;
+    white-space: wrap;
+}
+
+.game-content>ol {
+    list-style: none;
+    margin: 10px;
+}
+
+.desc-game h1 {
+    font-size: 30px;
+    margin: 10px;
+}
+
+.desc-game h3 {
+    margin: 20px 30px;
+    color: #fff;
+}
+
+.desc-game p {
+    margin: 10px;
+    font-size: 18px;
+    word-wrap: break-word;
+    word-break: keep-all;
+}
+
+.desc-game ol li {
+    margin: 10px;
+}
+
+
 /*----- footer ------*/
 
 .rodape {
