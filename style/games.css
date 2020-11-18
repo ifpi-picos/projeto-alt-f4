@@ -110,11 +110,15 @@ h1.title {
     text-shadow: 2px 2px 5px #c40233;
 }
 
+h3.subtitle {
+    text-shadow: 2px 2px 5px #000;
+}
+
 .card {
     width: 90vw;
     height: 90vh;
     margin: 40px 80px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.5);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -166,9 +170,19 @@ h1.title {
     white-space: wrap;
 }
 
+.sobre-game {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+}
+
 .game-content>ol {
     list-style: none;
     margin: 10px;
+}
+
+iframe {
+    margin-top: 30px;
 }
 
 .desc-game h1 {
@@ -177,7 +191,7 @@ h1.title {
 }
 
 .desc-game h3 {
-    margin: 50px 0 auto;
+    margin: 24px 0 auto;
     color: #fff;
 }
 
