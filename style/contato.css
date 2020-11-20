@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+:root {
+    --cinza: #8b8b8b;
+}
+
+a {
+    color: #ffffff;
+}
+
+body {
+    background: linear-gradient(#90C0DC, #ffffff) no-repeat;
+    font-family: 'Nunito', sans-serif;
+}
+
+.container1 {
+    width: 90vw;
+    margin: 80px auto 0; 
+    height: 500px; 
+   /*  position: relative; */
+
+   background: linear-gradient(#90C0DC, #ffffff) no-repeat;
+
+ /* display: flex; 
+   align-items: center; */
+}
+
+.conte2{
+    margin: 0 auto;
+    width: 400px;
+}
+
+.texto{
+  margin-bottom: 1.3em;
+  text-indent: 1.4em;
+  font-size: 17px;
+}
+
+/*  formulario */
+
+form {
+    /* Apenas para centralizar o form na página */
+    margin: 0 auto;
+    width: 400px; 
+    
+    /*top: 40px; */
+    /* Para ver as bordas do formulário 
+    padding: 1em;
+    border: 1px solid #CCC; 
+    border-radius: 1em; */
+}
+
+form div + div {
+   margin-top: 1em;
+}
+
+label {
+    /*Para ter certeza que todas as labels tem o mesmo tamanho e estão propriamente alinhadas */
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+}
+
+input, textarea {
+    /* Para certificar-se que todos os campos de texto têm as mesmas configurações de fonte. Por padrão, textareas ter uma fonte monospace*/
+    font: 1em sans-serif;
+
+    /* Para dar o mesmo tamanho a todos os campo de texto */
+    width: 250px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    /* Para harmonizar o look & feel das bordas nos campos de texto*/
+    border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+    /* Dar um pouco de destaque nos elementos ativos */
+    border-color: #000;
+}
+
+textarea {
+    /* Para alinhar corretamente os campos de texto de várias linhas com sua label*/
+    vertical-align: top;
+
+    /* Para dar espaço suficiente para digitar algum texto */
+    height: 5em;
+
+    /* Para permitir aos usuários redimensionarem qualquer textarea verticalmente. Ele não funciona em todos os browsers */
+    resize: none;
+}
+
+#botao{
+    width: 100px;
+    height: 35px;
+    border: 0;
+    border-radius: 4px;
+    background: gray;
+    text-transform: uppercase;
+    transition-duration: 0.4s;
+}
+
+#botao:hover{
+    background: #ffffff;
+}
+
+.buttonn{
+    padding-left: 175px;
+}
+
+
+/* Cabeçalho / nav bar */
+
+.container {
+    width: 100%;
+    height: 85vh;
+}
+
+.container .cabecalho {
+    width: 100%;
+    height: 60px;
+    background-color: #90C0DC;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho h2 {
+    color: #ffffff;
+    transition: ease-in-out .5s;
+}
+
+.cabecalho h2:hover {
+    font-size: 30px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 35px;
+}
+
+.logo-container .logo-img {
+    width: 40px;
+    height: 40px;
+    background: #5e8aff;
+    border-radius: 50%;
+
+    margin-right: 8px;
+}
+
+.menu-lista {
+    display: flex;
+    margin-right: 35px;
+}
+
+.menu-lista li {
+    margin-left: 30px;
+    list-style: none;
+}
+
+.menu-lista a {
+    font-size: 20px;
+    text-decoration: none;
+    transition: color ease-in .5s;
+}
+
+.menu-lista a:hover {
+    color: #0f26a6;
+}
+
+ /* footer */
+
+.rodape {
+    width: 100%;
+    height: 250px;
+
+    background: #ffffff;
+
+    display: flex;
+}
+
+.logo-rodape {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+.logo-rodape .logo-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    background-color: #5e8aff;
+
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+.logo-rodape h3 {
+    font-size: 28px;
+}
+

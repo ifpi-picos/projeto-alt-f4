@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+:root {
+    --cinza: #8b8b8b;
+}
+
+a {
+    color: #ffffff;
+}
+
+body {
+    background: linear-gradient(#90C0DC, #ffffff) no-repeat;
+    font-family: 'Nunito', sans-serif;
+}    
+
+ /*  meio */
+.container1 {
+    width: 98vw;
+    margin: 80px auto 0; 
+    height: 500px;
+    position: relative;
+
+    background: linear-gradient(#90C0DC, #ffffff) no-repeat;
+
+    display: flex;
+    align-items: center; 
+}
+
+.texto{
+  margin-bottom: 1.3em;
+  text-indent: 1.4em;
+  text-align: justify;
+  font-size: 17px;
+}
+
+
+/* Cabeçalho / nav bar */
+
+.cabecalho h2{
+    color: #ffffff;
+    transition: ease-in-out .5s;
+}
+
+.cabecalho h2:hover {
+    font-size: 30px;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+}
+
+.container .cabecalho {
+    width: 100%;
+    height: 60px;
+    background-color: #578caa;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 35px;
+}
+
+.logo-container .logo-img {
+    width: 40px;
+    height: 40px;
+    background: #5e8aff;
+    border-radius: 50%;
+
+    margin-right: 8px;
+}
+
+.menu-lista {
+    display: flex;
+    margin-right: 35px;
+}
+
+.menu-lista li {
+    margin-left: 30px;
+    list-style: none;
+}
+
+.menu-lista a {
+    font-size: 20px;
+    text-decoration: none;
+    transition: color ease-in .5s;
+}
+
+.menu-lista a:hover {
+    color: #0f26a6;
+}
+
+ /* footer rodape */
+
+.rodape {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+
+    background: #90C0DC;
+
+    display: flex;
+}
+
+.logo-rodape {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+.logo-rodape .logo-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    background-color: #5e8aff;
+
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+.logo-rodape h3 {
+    font-size: 28px;
+}
+
+
