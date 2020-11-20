@@ -33,7 +33,7 @@ textarea {
 .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 10vh 70vh 20vh;
+    grid-template-rows: 65px 70vh 20vh;
     grid-template-areas: "header" "main" "footer";
 }
 
@@ -117,8 +117,11 @@ footer {
     color: #0f26a6;
 }
 
+
+/* ---- MAIN ---- */
+
 h1.title {
-    margin-top: 50px;
+    margin-top: 0px;
     text-align: center;
     color: #ffffff;
     font-size: 36px;
@@ -234,6 +237,10 @@ iframe {
     padding: 5px;
     font-weight: bold;
     text-shadow: 2px 2px 5px #4e97c3;
+}
+
+.game-contato {
+    margin-bottom: 100px;
 }
 
 .game-contato p {
