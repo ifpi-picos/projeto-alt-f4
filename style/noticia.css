@@ -17,6 +17,7 @@ a {
 body {
     background: linear-gradient(#90C0DC, #ffffff) no-repeat;
     font-family: 'Nunito', sans-serif;
+    
 }
 
 content{
@@ -86,6 +87,7 @@ content{
 .banner .banner-1 {
     font-weight: 500px;
     font-size: 70px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .area-de-noticias {
@@ -119,14 +121,14 @@ content{
     flex-direction: column;
     height: 400px;
     width: 270px;
+    margin-bottom: 60px;
 }
 
 .c-card img{
-    width: 270px;
-    height: 220px;
+    width: 300px;
+    height: 300px;
     padding-bottom: 10px;
 }
-
 
 
 /* Rodape  */
@@ -225,12 +227,13 @@ p{
     height: auto;
     font-size: 20px;
     font-family: inherit;
+    
 }
 
 .button-inicio{
     text-align: center;
     padding-top: 20px;
-    
+    margin-top: 50px;
 }
 
 
