@@ -10,24 +10,33 @@
 a {
     color: #282828;
     text-decoration: none;
-    text-align:justify;
-	text-justify:inter-word;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 body {
     background: linear-gradient(#90C0DC, #ffffff) no-repeat;
     font-family: 'Nunito', sans-serif;
-    
 }
 
-content{
+content {
     justify-content: center;
     margin: 20px;
 }
 
+.cabecalho h2 {
+    color: #ffffff;
+    transition: ease-in-out .5s;
+}
+
+.cabecalho h2:hover {
+    font-size: 1.3vw;
+}
+
 .container .cabecalho {
-    width: 100vw;
-    height: 60px;
+    width: 100%;
+    height: 65px;
+    background-color: #4e97c3;
     position: fixed;
     z-index: 2;
     left: 0;
@@ -45,14 +54,24 @@ content{
 }
 
 .logo-container .logo-img {
-    width: 40px;
-    height: 40px;
-    background: #5eccff;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     margin-right: 8px;
 }
 
-/** Menu **/
+.logo-container .logo-img img {
+    width: 100%;
+}
+
+.cabecalho h2 {
+    color: #ffffff;
+    transition: ease-in-out .2s;
+}
+
+.cabecalho h2:hover {
+    font-size: 25px;
+}
 
 .menu-lista {
     display: flex;
@@ -65,13 +84,12 @@ content{
 }
 
 .menu-lista a {
-    font-size: 20px;
-    text-decoration: none;
-    transition: color .2s;
+    font-size: 1.3vw;
+    transition: color ease-in .2s;
 }
 
 .menu-lista a:hover {
-    color: #ffffff;
+    color: #0f26a6;
 }
 
 .banner {
@@ -101,22 +119,23 @@ content{
     align-items: center;
 }
 
+
 /**********  cards **********/
 
-.flex-item{
+.flex-item {
     height: 45%;
 }
 
-.l-card{
+.l-card {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr) );
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-content: center;
     justify-items: center;
     padding: 1;
 }
 
-.c-card{
+.c-card {
     display: flex;
     flex-direction: column;
     height: 400px;
@@ -124,7 +143,7 @@ content{
     margin-bottom: 60px;
 }
 
-.c-card img{
+.c-card img {
     width: 300px;
     height: 300px;
     padding-bottom: 10px;
@@ -133,14 +152,11 @@ content{
 
 /* Rodape  */
 
-
 .rodape {
     width: 90vw;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     margin: 0 auto 30px;
 }
 
@@ -173,7 +189,6 @@ content{
     font-size: 28px;
 }
 
-
 .logo-rodape .logo-img img {
     width: 100%;
 }
@@ -204,11 +219,11 @@ content{
 
 /* fontes */
 
-p span{
+p span {
     font-size: small;
 }
 
-p{
+p {
     font-size: 20px;
 }
 
@@ -216,10 +231,10 @@ p{
     font-size: 28px;
 }
 
+
 /**/
 
-.button-inicio button{
-
+.button-inicio button {
     border: none;
     border-radius: 5px;
     background: #5eccff;
@@ -227,10 +242,9 @@ p{
     height: auto;
     font-size: 20px;
     font-family: inherit;
-    
 }
 
-.button-inicio{
+.button-inicio {
     text-align: center;
     padding-top: 20px;
     margin-top: 50px;
@@ -239,8 +253,6 @@ p{
 
 /** apresentação de noticias **/
 
-main{
-
+main {
     margin: 20px 40px 20px 40px;
 }
-
