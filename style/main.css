@@ -11,7 +11,6 @@
     box-sizing: border-box;
 }
 
-
 a {
     color: #fff;
     text-decoration: none;
@@ -28,7 +27,6 @@ input,
 textarea {
     font-family: century-gothic;
 }
-
 
 .container .cabecalho {
     width: 100%;
@@ -89,7 +87,6 @@ textarea {
     color: #0f26a6;
 }
 
-
 .swiper-container {
     max-width: 90%;
     height: 590px;
@@ -137,7 +134,6 @@ textarea {
     font-size: 20px;
     font-weight: 500;
     width: 300px;
-
     padding-top: 20px;
 }
 
@@ -160,13 +156,13 @@ textarea {
 }
 
 
+/* footer */
+
 .rodape {
     width: 90vw;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     margin: 0 auto 30px;
 }
 
@@ -198,7 +194,6 @@ textarea {
 .logo-rodape h3 {
     font-size: 28px;
 }
-
 
 .logo-rodape .logo-img img {
     width: 100%;
