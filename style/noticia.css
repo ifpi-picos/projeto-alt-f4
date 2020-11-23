@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+    font-family: century-gothic;
+    src: url('../font/century-gothic.ttf');
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -8,29 +12,20 @@
 }
 
 a {
-    color: #282828;
+    color: #fff;
     text-decoration: none;
-    text-align: justify;
-    text-justify: inter-word;
 }
 
 body {
-    background: linear-gradient(#90C0DC, #ffffff) no-repeat;
-    font-family: 'Nunito', sans-serif;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #90C0DC 50%, #fff) no-repeat;
 }
 
-content {
-    justify-content: center;
-    margin: 20px;
-}
-
-.cabecalho h2 {
-    color: #ffffff;
-    transition: ease-in-out .5s;
-}
-
-.cabecalho h2:hover {
-    font-size: 1.3vw;
+body,
+input,
+textarea {
+    font-family: century-gothic;
 }
 
 .container .cabecalho {
@@ -84,13 +79,16 @@ content {
 }
 
 .menu-lista a {
-    font-size: 1.3vw;
+    font-size: 18px;
     transition: color ease-in .2s;
 }
 
 .menu-lista a:hover {
     color: #0f26a6;
 }
+
+
+/* ---- MAIN ---- */
 
 .banner {
     width: 100vw;
