@@ -1,9 +1,34 @@
-![Ellipse 5](https://user-images.githubusercontent.com/51001932/97233939-9a9ae680-17be-11eb-8740-e490a6e5b999.png)
+# projeto-radical-dreamers
 
-# Projeto <alt+f4/>
-### Esse projeto tem como objetivo a aprendizagem das tecnologias bases da web e ao mesmo tempo a função de ajudar a empresa Radical Dreamers a se mater atualizada de acordo com as novas tecnologias do mercado.
+## Project setup
+```
+npm install
+```
 
-## Tecnologias usadas
-* HTML
-* CSS
-* Javascript
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your unit tests
+```
+npm run test:unit
+```
+
+### Run your end-to-end tests
+```
+npm run test:e2e
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
