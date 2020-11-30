@@ -28,11 +28,7 @@
   </div>
 </template>
 
-<style lang="scoped">
-  @font-face {
-    font-family: century-gothic;
-    src: url("../font/century-gothic.ttf");
-  }
+<style scoped>
 
   * {
     padding: 0;
