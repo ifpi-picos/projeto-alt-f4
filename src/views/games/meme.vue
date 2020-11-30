@@ -4,7 +4,7 @@
                 <section class="game-content" id="c_KC_Wek8o8">
                     <h1 class="title">Meme Card Arena</h1>
                     <div class="sobre-game">
-                        <h3 class="subtitle">Sobre o Jogo</h2>
+                        <h3 class="subtitle">Sobre o Jogo</h3>
                             <p>Jogo de cartas online sobre memes. Meme Card Arena é um jogo de cartas online e mobile sobre memes. Nele, você encontrará todas as referências de memes possíveis, como o “Já acabou, Jéssica?”, o “Morre, diabo!” ou até mesmo
                                 o novo “Stonks”! Será que você conhece de meme o bastante para entender todas as referências?</p>
                             <p>O jogo segue padrões artísticos e jogabilidades idealizados por clásssicos da insdústria de desenvolvimento de jogos, como Pokemón e The Legend of Zelda, também conhecidos como jogos de plataforma.</p>
