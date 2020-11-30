@@ -13,6 +13,7 @@
       style="text-shadow: 1px 1px 2px #333;"
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
+      @reset="0.1"
     >
       <!-- Text slides with image -->
       <b-carousel-slide
@@ -43,15 +44,6 @@
             alt="image slot"
           />
         </template>
-      </b-carousel-slide>
-
-      <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-      <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          eros felis, tincidunt a tincidunt eget, convallis vel est. Ut
-          pellentesque ut lacus vel interdum.
-        </p>
       </b-carousel-slide>
     </b-carousel>
     <br />
@@ -122,6 +114,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'Home',
   components: {},
