@@ -28,12 +28,7 @@
   </div>
 </template>
 
-<style lang="">
-@font-face {
-  font-family: century-gothic;
-  src: url("../font/century-gothic.ttf");
-}
-
+<style  scope>
 * {
   padding: 0;
   margin: 0;
