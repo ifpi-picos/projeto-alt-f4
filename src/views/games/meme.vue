@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <template lang="">
   <div class="desc-game"> 
     <section class="game-content" id="c_KC_Wek8o8"> 
@@ -23,3 +25,4 @@
     </section> 
   </div>
 </template>
+>>>>>>> fc227ebd0997b6c0f311a7e30458463c2231fd5c
