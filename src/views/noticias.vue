@@ -3,10 +3,10 @@
     <section class="card-jogos">
       <div class="card">
         <div class="cards" id="LWKaM3Awq6A">
-          <a href="./games/avelar.vue"><img src="img/640x790/AVELAR.png" alt="Avelar CHRONLCLES" /></a>
+          <a href="games/avelar.html"><img src="img/640x790/AVELAR.png" alt="Avelar CHRONLCLES" /></a>
         </div>
         <div class="cards" id="c_KC_Wek8o8">
-          <a href="./games/meme.vue"><img src="img/640x790/memecardarena.png" alt="Meme Card Arena " /></a>
+          <a href="games/meme.html"><img src="img/640x790/memecardarena.png" alt="Meme Card Arena " /></a>
         </div>
         <div class="cards" id="iNTtq3Dfrp4 ">
           <a href="">
@@ -124,4 +124,73 @@
     left: 700px;
   }
 
+  /* ---- GAME DESCRIPTION ---- */
+
+  .desc-game {
+    height: 100vh;
+    text-align: center;
+    white-space: wrap;
+  }
+
+  .game-content {
+    text-align: justify;
+  }
+
+  .game-content > ol {
+    list-style: none;
+    margin: 10px;
+  }
+
+  /* ---- VIDEO ---- */
+
+  iframe {
+    margin-top: 30px;
+  }
+
+  .desc-game p {
+    font-size: 1em;
+    word-wrap: break-word;
+    word-break: keep-all;
+  }
+
+  .desc-game ol li {
+    margin: 20px;
+    list-style: decimal;
+    list-style-position: inside;
+  }
+
+  /* ---- DOWNLOAD GAME ---- */
+
+  .download-game img {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    display: block;
+  }
+
+  .download-game a {
+    padding: 5px;
+    font-weight: bold;
+    color: #4e97c3;
+  }
+
+  /* ---- GAME CONTACT ---- */
+
+  .game-contato {
+    margin-bottom: 100px;
+  }
+
+  .game-contato p {
+    margin: 50px 0 30px 0;
+    font-weight: bold;
+  }
+
+  .game-contato a {
+    padding: 5px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #4e97c3;
+    border-radius: 10px;
+    margin-top: 50px;
+  }
 </style>
