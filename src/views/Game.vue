@@ -3,10 +3,10 @@
     <section class="card-jogos">
       <div class="card">
         <div class="cards" id="LWKaM3Awq6A">
-          <a href="games/avelar.html"><img src="img/640x790/AVELAR.png" alt="Avelar CHRONLCLES" /></a>
+          <a href="./games/avelar.vue"><img src="img/640x790/AVELAR.png" alt="Avelar CHRONLCLES" /></a>
         </div>
         <div class="cards" id="c_KC_Wek8o8">
-          <a href="games/meme.html"><img src="img/640x790/memecardarena.png" alt="Meme Card Arena " /></a>
+          <a href="./games/meme.vue"><img src="img/640x790/memecardarena.png" alt="Meme Card Arena " /></a>
         </div>
         <div class="cards" id="iNTtq3Dfrp4 ">
           <a href="">
