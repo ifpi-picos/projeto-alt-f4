@@ -23,14 +23,10 @@
       ></b-carousel-slide>
 
       <!-- Slides with custom text -->
-      <b-carousel-slide img-src="img/full hd/lendasrpg.png">
-      </b-carousel-slide>
+      <b-carousel-slide img-src="img/full hd/lendasrpg.png"> </b-carousel-slide>
 
       <!-- Slides with image only -->
-      <b-carousel-slide
-        img-src="img/full hd/MEMEMCARD.png"
-      ></b-carousel-slide>
-
+      <b-carousel-slide img-src="img/full hd/MEMEMCARD.png"></b-carousel-slide>
     </b-carousel>
     <br />
     <br />
@@ -100,7 +96,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'Home',
   components: {},
