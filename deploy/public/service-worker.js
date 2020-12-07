@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.482924dc1621e9c9ce453a74029bb115.js"
+  "/precache-manifest.0fba3a2e37dae5deed1cc8b4d4f19c47.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "projeto-radical-dreamers"});
