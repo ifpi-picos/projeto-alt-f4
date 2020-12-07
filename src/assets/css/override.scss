@@ -1,1 +1,18 @@
 $primary: #4e97c3 !default;
+
+.carousel-indicators li {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50%;
+  outline: none;
+}
+
+.carousel {
+  width: 1250px;
+  margin: 0 auto;
+  height: 610px !important;
+}
+
+.carousel img {
+  height: 610px !important;
+}

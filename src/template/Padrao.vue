@@ -15,9 +15,17 @@
 
     <router-view />
 
-    <footer class="container-fluid pt-4 pb-4">
-      <img src="img/logo/logo1.png" width="100">
-      <h4 class="text-dark">@radicaldreamers</h4>
+    <footer class="footer-container">
+      <div class="content-left">
+        <img src="img/logo/logo1.png" width="75" class="mr-4">
+        <a href="#">Política de privacidade</a>
+      </div>
+
+      <div class="content-right">
+        <a href=""><img src="img/svg/insta.svg"></a>
+        <a href=""><img src="img/svg/twitter.svg"></a>
+        <a href=""><img src="img/svg/github.svg"></a>
+      </div>
     </footer>
   </div>
 </template>
@@ -32,3 +40,23 @@ export default {
   methods: {}
 }
 </script>
+
+<style scoped>
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-container a {
+    color: #1a1a1a;
+    font-size: 20px;
+  }
+
+  .content-right img {
+    width: 38px;
+    margin-right: 20px;
+  }
+</style>

@@ -7,20 +7,15 @@
       :interval="4000"
       controls
       indicators
-      background="#ababab"
-      img-width="960"
-      img-height="360"
-      style="text-shadow: 1px 1px 2px #333;"
+      img-width="1024"
+      img-height="460"
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
       @reset="0.1"
+      class="mt-3"
     >
       <!-- Text slides with image -->
-      <b-carousel-slide
-        caption="First slide"
-        text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-        img-src="img/full hd/avelar.png"
-      ></b-carousel-slide>
+      <b-carousel-slide img-src="img/full hd/avelar.png"></b-carousel-slide>
 
       <!-- Slides with custom text -->
       <b-carousel-slide img-src="img/full hd/lendasrpg.png"> </b-carousel-slide>
@@ -28,70 +23,63 @@
       <!-- Slides with image only -->
       <b-carousel-slide img-src="img/full hd/MEMEMCARD.png"></b-carousel-slide>
     </b-carousel>
-    <br />
-    <br />
-    <br />
+
     <div class="container">
+      <h2 class="text-center mb-4">Notícias</h2>
       <div class="row">
         <div class="col-md-4">
           <b-card
-            title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=25"
+            title="Avelar"
+            img-src="img/900X900/AVELAR.png"
             img-alt="Image"
             img-top
             tag="article"
             style="max-width: 20rem;"
-            class="mb-2"
+            class="mb-4"
           >
             <b-card-text>
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </b-card-text>
 
-            <b-button href="#" variant="primary">Go somewhere</b-button>
           </b-card>
         </div>
         <div class="col-md-4">
           <b-card
-            title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=25"
+            title="Lendas RPG"
+            img-src="img/900X900/LENDAS RPG.png"
             img-alt="Image"
             img-top
             tag="article"
             style="max-width: 20rem;"
-            class="mb-2"
+            class="mb-4"
           >
             <b-card-text>
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </b-card-text>
 
-            <b-button href="#" variant="primary">Go somewhere</b-button>
           </b-card>
         </div>
         <div class="col-md-4">
           <b-card
-            title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=25"
+            title="Reborn"
+            img-src="img/900X900/REBORN.png"
             img-alt="Image"
             img-top
             tag="article"
             style="max-width: 20rem;"
-            class="mb-2"
+            class="mb-4"
           >
             <b-card-text>
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </b-card-text>
-
-            <b-button href="#" variant="primary">Go somewhere</b-button>
           </b-card>
         </div>
+        <b-button pill variant="primary" class="">Ver mais</b-button>
       </div>
     </div>
-    <br />
-    <br />
-    <br />
   </div>
 </template>
 
@@ -117,3 +105,22 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+  .container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .container h2 {
+    font-size: 56px;
+    font-weight: 500;
+  }
+
+  .button-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+</style>
