@@ -4,7 +4,7 @@
       <div v-for="card in cards" :key="card.title" class="col-md-3 col-sm-6">
         <a href="/game">
           <b-card
-            img-src="https://picsum.photos/640/790/?image=41"
+            img-src="img/640x790/AVELAR.png"
             img-alt="Image"
             overlay
             class="my-2 p-3 border-light"
@@ -36,6 +36,12 @@ export default {
         },
         {
           title: "Title 6",
+        },
+        {
+          title: "Title 7",
+        },
+        {
+          title: "Title 8",
         },
       ],
     };
