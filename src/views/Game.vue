@@ -25,6 +25,9 @@
         ></a>
         <a href="" class="d-flex justify-content-center">Download</a>
       </div>
+      <div class="d-flex contato">
+        <a href="/contato" class="justify-content-center btn btn-info mx-auto">Contato</a>
+      </div>
 
       <div class="video my-5">
         <b-embed
@@ -33,9 +36,6 @@
           src="https://www.youtube.com/embed/LWKaM3Awq6A"
           allowfullscreen
         ></b-embed>
-      </div>
-      <div class="d-flex contato">
-        <a href="/contato" class="justify-content-center btn btn-info mx-auto">Contato</a>
       </div>
     </div>
   </div>

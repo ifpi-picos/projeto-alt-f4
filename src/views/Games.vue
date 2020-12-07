@@ -7,7 +7,7 @@
             img-src="img/640x790/AVELAR.png"
             img-alt="Image"
             overlay
-            class="my-2 p-3 border-light"
+            class="my-3 mx-5 border-light"
           ></b-card>
         </a>
       </div>
