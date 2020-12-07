@@ -1,12 +1,12 @@
 <template>
   <div class="container-fluid">
-    <div class="text mx-4 my-4">
+    <div class="m-5">
       <h1>{{ game.title }}</h1>
       <h2>{{ game.subtitle }}</h2>
-      <p>{{ game.description }}</p>
-      <a href="">download do game</a>
-      <iframe src="" frameborder="0"></iframe>
-      <a href="">contato</a>
+      <p class="text-justify">{{ game.description }}</p>
+      <a href="" class="badge badge-pill badge-primary">download do game</a>
+      <a :href="video" class="d-block mx-auto"></a>
+      <a href="/contato" class="btn btn-info mx-auto">Contato</a>
     </div>
   </div>
 </template>
@@ -16,12 +16,11 @@ export default {
   data() {
     return {
       game: {
-        title: "Title 1",
+        title: "Avelar Chronicles",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        subtitle: "Generate Lorem Ipsum placeholder text.",
+          "O jogo Avelar Chronicles, conta a história de Avelar que é um pesquisador que viaja pela Caatinga Brasileira, catalogando as espécies de plantas e animais. No decorrer de sua viagem ele ajuda agricultores, incentivando uma produção sustentável, preparação para os períodos de chuva e ajudar a preservar a biodiversidade do bioma, evitando a caça de animais, queimadas e outros eventos. Avelar também registra os animais e plantas encontrados em dispositivo chamado Biodex, uma plataforma para cadastrar e ver às informações relevantes como fotos, características, e etc. O jogo segue padrões artísticos e jogabilidades idealizados por clásssicos da insdústria de desenvolvimento de jogos, como Pokemón e The Legend of Zelda, também conhecidos como jogos de plataforma.",
         download: "link de download",
-        video: "video do game",
+        video: "https://youtu.be/c_KC_Wek8o8",
       },
     };
   },
