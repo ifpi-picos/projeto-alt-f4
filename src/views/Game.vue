@@ -4,8 +4,8 @@
       <h1>{{ game.title }}</h1>
       <h2>{{ game.subtitle }}</h2>
       <p class="text-justify">{{ game.description }}</p>
-      <div class="download my-4">
-        <a href="" class="d-flex justify-content-center bi bi-download"
+      <div class="links d-flex justify-content-center my-4">
+        <a href="" class="bi bi-download btn btn-outline-primary"
           ><svg
             width="3em"
             height="3em"
@@ -21,12 +21,10 @@
             <path
               fill-rule="evenodd"
               d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"
-            /></svg
-        ></a>
-        <a href="" class="d-flex justify-content-center">Download</a>
-      </div>
-      <div class="d-flex contato">
-        <a href="/contato" class="justify-content-center btn btn-info mx-auto">Contato</a>
+            />
+          </svg>
+          Download</a
+        >
       </div>
 
       <div class="video my-5">
