@@ -5,8 +5,10 @@ import router from './router'
 import store from './store'
 
 import { BootstrapVue } from 'bootstrap-vue'
+import firebaseApp from './firebase'
 
 Vue.use(BootstrapVue)
+Vue.use(firebaseApp)
 
 Vue.config.productionTip = false
 
