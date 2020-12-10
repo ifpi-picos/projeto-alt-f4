@@ -77,7 +77,6 @@
             </b-card-text>
           </b-card>
         </div>
-        <b-button pill variant="primary" class="">Ver mais</b-button>
       </div>
     </div>
   </div>
@@ -115,12 +114,6 @@ export default {
   .container h2 {
     font-size: 56px;
     font-weight: 500;
-  }
-
-  .button-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
 </style>
