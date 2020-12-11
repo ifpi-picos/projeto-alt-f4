@@ -16,3 +16,8 @@ $primary: #4e97c3 !default;
 .carousel img {
   height: 610px !important;
 }
+
+a.nav-link.router-link-exact-active.router-link-active {
+  color: #fff;
+  font-weight: 600;
+}
