@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <div class="container-fluid">
     <section class="row justify-content-center">
       <div v-for="card in cards" :key="card.id" class="col-md-3 col-sm-6">
@@ -91,13 +90,3 @@ export default {
 };
 </script>
 <style scoped></style>
-=======
-  <div>
-    
-  </div>
-</template>
-
-<style scoped>
-
-</style>
->>>>>>> 0e9bbc9ad9ab008e0270919de90c5f9f43932ff0
