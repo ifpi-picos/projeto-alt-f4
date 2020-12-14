@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar sticky="true" toggleable="lg" type="dark" variant="primary">
+    <b-navbar sticky="true" toggleable="lg" type="dark" variant="primary" id="espaco">
       <b-img src="img/logo/logo1.png" width="35" height="35" class="mr-2 ml-4"></b-img>
       <b-navbar-brand to="/home">Radical Dreamers</b-navbar-brand>
 
@@ -22,9 +22,9 @@
       </div>
 
       <div class="content-right">
-        <a href=""><img src="img/svg/insta.svg"></a>
-        <a href=""><img src="img/svg/twitter.svg"></a>
-        <a href=""><img src="img/svg/github.svg"></a>
+        <a href="https://www.instagram.com/radicaldreamersgames/"><img src="img/svg/insta.svg"></a>
+        <a href="https://twitter.com/rdg_ltda"><img src="img/svg/twitter.svg"></a>
+        <a href="https://www.facebook.com/RadicalDreamersGames"><img src="img/svg/facebook.svg"></a>
       </div>
     </footer>
   </div>
@@ -57,6 +57,11 @@ export default {
 
   .content-right img {
     width: 38px;
+    height: 38px;
     margin-right: 20px;
+  }
+
+  #espaco{
+    padding: 10px;
   }
 </style>
