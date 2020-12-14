@@ -1,20 +1,16 @@
 <template>
   <div class="container-fluid">
     <section class="row justify-content-center">
-      <div v-for="card in cards" :key="card.id" class="col-md-3 col-sm-6">
-        <b-button
-          style="border: none"
-          class="mb-2 bg-light p-0"
+      <div v-for="card in cards" :key="card.id" class="p-0 col-md-3 col-sm-6">
+        <b-card
+          img-src="img/640x790/AVELAR.png"
+          img-alt="Image"
+          overlay
+          class="p-0 my-3 mx-5 border-light"
           @click="showDetails(card.id)"
+          style="cursor: pointer"
         >
-          <b-card
-            img-src="img/640x790/AVELAR.png"
-            img-alt="Image"
-            overlay
-            class="my-3 mx-5 border-light"
-          >
-          </b-card>
-        </b-button>
+        </b-card>
       </div>
       <br />
     </section>
