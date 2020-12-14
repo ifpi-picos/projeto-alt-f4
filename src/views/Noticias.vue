@@ -1,27 +1,20 @@
 <template>
   <div class="container-fluid">
-    <section class="row justify-content-center">
-      <div v-for="card in cards" :key="card.id" class="col-md-3 col-sm-6">
-        <b-button
-          style="border: none"
-          class="mb-2 bg-light"
+    <section class="p-0 row justify-content-center">
+      <div v-for="card in cards" :key="card.id" class="p-0 col-md-3 col-sm-6">
+        <b-card
+          title="Card Title"
+          img-src="img/640x790/AVELAR.png"
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem"
+          class="my-3 mx-3 p-0"
           @click="showDetails(card.id)"
         >
-          <b-card
-            title="Card Title"
-            img-src="img/640x790/AVELAR.png"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem"
-            class="my-3 mx-3"
-          >
-            <b-card-text>
-              Some quick example text to build on the card title
-            </b-card-text>
-            <b-button href="/Noticia" variant="secondary">Noticia</b-button>
-          </b-card>
-        </b-button>
+          <b-card-text> Some quick example text to build on the card title </b-card-text>
+          <b-button href="/Noticia" variant="secondary">Noticia</b-button>
+        </b-card>
       </div>
     </section>
   </div>
