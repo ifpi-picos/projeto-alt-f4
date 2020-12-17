@@ -10,8 +10,8 @@
         numero de celular
         texto area -->
     <fieldset>
-      <b-card class=" col-md-6 ml-auto mr-auto">
-        <form>
+      <b-card class=" col-md-6 ml-auto mr-auto border-0">
+        <form action="" method="POST">
           <p class="h2 text-center mb-4">Contate-nos</p>
 
           <!-- Fala o nome -->
