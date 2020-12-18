@@ -1,48 +1,36 @@
+'use strict'
 const functions = require('firebase-functions')
-const admin = require('firebase-admin')
 const nodemailer = require('nodemailer')
-admin.initializeApp()
+const cors = require('cors')({ origin: true })
 
-const transpoter = nodemailer.createTransport({
-  host: 'smtp.sendgrid.net',
-  port: 587,
-  secure: false, // upgrade later with STARTTLS
-  auth: {
-    user: 'apikey',
-    pass:
-      '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'
-  }
-})
+let url =
+  'smtps://<SEU-EMAIL>%40gmail.com:' +
+  encodeURIComponent('<SUA-SENHA>') +
+  '@smtp.gmail.com:465'
+let transporter = nodemailer.createTransport(url)
 
-// transpoter
-//   .sendMail({
-//     from: user,
-//     to: user,
-//     subject: 'oi seja bemvindo',
-//     Text: 'ola muito obrigado por usar nossa aplicação'
-//   })
-//   .then(info => {
-//     Response.send(info)
-//   }).catch
+exports.enviarEmail = functions.https.onRequest((req, res) => {
+  cors(req, res, () => {
+    let remetente = '"Adson Rocha" <email@gmail.com>'
 
-exports.sendEmail = functions.https.onRequest((request, response) => {
-  const emailFrom = request.query.emailFrom
-  const message = request.query.message
+    let assunto = req.body['assunto']
+    let destinatarios = req.body['destinatarios'] // lista de e-mails destinatarios separados por ,
+    let corpo = req.body['corpo']
+    let corpoHtml = req.body['corpoHtml']
 
-  const mailOptions = {
-    from: 'Radical Dreamers <lucassky08@gmail.com>',
-    to: 'lucassky08@gmail.com',
-    subject: 'fomulario de submissao',
-    hmtl: `${message}  From ${emailFrom}`
-  }
-
-  transpoter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log(
-        `ERROR: (email) ${emailFrom} --- (message) ${message} --- (error) ${error.toString()}`
-      )
-      response.send(error.toString())
+    let email = {
+      from: remetente,
+      to: destinatarios,
+      subject: assunto,
+      text: corpo,
+      html: corpoHtml
     }
-    response.send('Sua mensagem foi enviada com sucesso')
+
+    transporter.sendMail(email, (error, info) => {
+      if (error) {
+        return console.log(error)
+      }
+      console.log('Mensagem %s enviada: %s', info.messageId, info.response)
+    })
   })
 })
