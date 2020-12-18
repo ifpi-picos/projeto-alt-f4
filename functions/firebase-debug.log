@@ -118,3 +118,4 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [debug] [2020-12-18T18:57:56.712Z] [worker-enviarEmail-7c4b433c-f52b-4a81-be46-c72c51acc9d9]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-enviarEmail-7c4b433c-f52b-4a81-be46-c72c51acc9d9]: FINISHED"}}
 [debug] [2020-12-18T18:57:56.712Z] [work-queue] {"queueLength":0,"workRunningCount":0}
 [debug] [2020-12-18T18:57:56.897Z] Functions emulator received unknown request at path /favicon.ico
+[debug] [2020-12-18T19:06:32.887Z] File C:\Users\Lucas\Documents\git\projeto-alt-f4\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Lucas\\Documents\\git\\projeto-alt-f4\\functions\\index.js changed, reloading triggers"}}
