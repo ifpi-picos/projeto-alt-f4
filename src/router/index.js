@@ -54,7 +54,7 @@ const routes = [{
   ]
 },
 {
-  path: '/login',
+  path: '/admin',
   name: 'login',
   component: () => import('../views/admin/Login.vue')
 },
@@ -63,10 +63,16 @@ const routes = [{
   name: 'Sidebar',
   component: Sidebar,
   children: [{
-    path: '/admin',
+    path: '/home-admin',
     name: 'Admin',
     component: () =>
       import('../views/admin/Admin.vue')
+  },
+  {
+    path: '/cadastro-noticia',
+    name: 'Cadastro-noticia',
+    component: () =>
+      import('../views/admin/CadastroNoticia.vue')
   }]
 }]
 

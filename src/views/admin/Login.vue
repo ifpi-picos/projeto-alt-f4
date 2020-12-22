@@ -45,16 +45,6 @@
           style="height: 43px; font-weight: 600"
           >LOGIN</b-button
         >
-
-        <b-form-checkbox
-          name="login-automatico"
-          v-model="checked"
-          value="ativo"
-          class="mb-3"
-          style="font-weight: 700; color: #818181"
-        >
-          LOGIN AUTOMÁTICO
-        </b-form-checkbox>
       </b-form>
     </b-card>
   </div>
@@ -62,26 +52,32 @@
 
 <script>
 export default {
-  name: 'Login',
-
   data() {
     return {
       email: '',
       senha: '',
-      checked: ''
     }
   },
+  
   methods: {
     async Login () {
       const { email, senha } = this
 
       try {
         const res = await this.$firebase.auth().signInWithEmailAndPassword(email, senha)
+        this.$router.push('home-admin')
 
-        console.log(res)
+        var user = await this.$firebase.auth().currentUser;
+
+        if (user != null) {
+          console.log(user.email)
+        }
+
       } catch (error) {
-        console.log(error)
+        var errorCode = error.code;
+        var errorMessage = error.message;
       }
+
 
     }
   }

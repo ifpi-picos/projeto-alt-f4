@@ -1,25 +1,42 @@
 <template>
   <div class="container-inicial">
-    <h1 class="text-center">Notícias</h1>
+    <sidebar-titulo nomeTitulo="Notícias"></sidebar-titulo>
     <div class="container">
-      <b-table striped hover :items="items"></b-table>
+      <b-table striped hover :items="noticia" class=""></b-table>
     </div>
 
   </div>
 </template>
 
 <script>
+import SidebarTitulo from '../../components/SidebarTitulo.vue'
+
 export default {
+  components: {
+    SidebarTitulo
+  },
   data() {
       return {
-        items: [
-          { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
-          { age: 21, first_name: 'Larsen', last_name: 'Shaw' },
-          { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
-          { age: 38, first_name: 'Jami', last_name: 'Carney' }
-        ]
+        noticia: [],
+        
       }
+  },
+  methods: {
+    salvar() {
+      this.$firebase.firestore().collection('noticias')
+        .get().then((doc) => {
+          if (doc.exists) {
+            console.log("Document data:", doc.data());
+          } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+          }
+        })
+        .catch(function(error) {
+            console.log("Error getting document:", error);
+        });
     }
+  }
 }
 </script>
 
@@ -28,9 +45,6 @@ export default {
     width: 100vw;
     height: 100vh;
 
-    /* background: #3B56BF;
-
-    color: #ffffff; */
   }
 
 </style>
