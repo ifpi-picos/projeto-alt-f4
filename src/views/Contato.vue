@@ -11,7 +11,10 @@
         texto area -->
     <fieldset>
       <b-card class=" col-md-6 ml-auto mr-auto border-0">
-        <form action="" method="POST">
+        <form
+          action="https://radical-dreamers-api.herokuapp.com/"
+          method="POST"
+        >
           <p class="h2 text-center mb-4">Contate-nos</p>
 
           <!-- Fala o nome -->
@@ -49,17 +52,17 @@
           <br />
 
           <!-- deixe a mensagem -->
-          <label for="mensagem" class="grey-text"> </label>
+          <label for="mensagem1" class="grey-text"> </label>
           <textarea
             type="text"
-            id="mensagem"
+            id="mensagem2"
             class="form-control"
             rows="3"
             placeholder="Digite Sua Mensagem"
           ></textarea>
 
           <div class=" text-center mt-4">
-            <button id="botao">Enviar</button>
+            <button type="submit" id="botao">Enviar</button>
           </div>
         </form>
       </b-card>
