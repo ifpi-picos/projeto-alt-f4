@@ -22,10 +22,10 @@ export default {
 
 <style scoped>
 .botao-container {
-  width: 210px;
+  width: 180px;
   height: 30px;
   border-radius: 5px;
-  background: rgb(1, 168, 197);
+  background: #4e97c3;
 
   display: flex;
   justify-content: center;
