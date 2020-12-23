@@ -4,11 +4,11 @@
       <div v-for="card in cards" :key="card.id" class="p-0 col-md-3 col-sm-6">
         <b-card
           title="Card Title"
-          img-src="img/640x790/AVELAR.png"
+          img-src="img/900X900/AVELAR.png"
           img-alt="Image"
           img-top
           tag="article"
-          style="max-width: 20rem"
+          style="max-width: 17.5rem"
           class="my-3 mx-3 p-0"
           @click="showDetails(card.id)"
         >

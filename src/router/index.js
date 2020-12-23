@@ -1,5 +1,7 @@
+// import { from } from 'core-js/core/array'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+// import firebase from 'firebase/app'
 import Padrao from '../template/Padrao.vue'
 import Sidebar from '../template/Sidebar.vue'
 
@@ -64,9 +66,9 @@ const routes = [{
   component: Sidebar,
   children: [{
     path: '/home-admin',
-    name: 'Admin',
+    name: 'home-admin',
     component: () =>
-      import('../views/admin/Admin.vue')
+      import('../views/admin/HomeAdmin.vue')
   },
   {
     path: '/cadastro-noticia',
@@ -81,5 +83,24 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+// router.beforeEach((to, from, next) => {
+//   const HOME = '/'
+//   const LOGIN = '/admin'
+//   const PAGINA_INICIAL_AUTHENTICADO = '/home-admin'
+//   firebase.auth().onAuthStateChanged((user) => {
+//     if (user) {
+//       if (to.path === LOGIN) {
+//         next({ path: PAGINA_INICIAL_AUTHENTICADO })
+//       }
+//       next()
+//     } else {
+//       if (to.path !== HOME) {
+//         next({ path: HOME })
+//       }
+//     }
+//   })
+//   next()
+// })
 
 export default router

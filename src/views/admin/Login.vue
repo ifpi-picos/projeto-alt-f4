@@ -52,32 +52,27 @@
 
 <script>
 export default {
+  name: 'Login',
+
   data() {
     return {
       email: '',
-      senha: '',
+      senha: ''
     }
   },
-  
   methods: {
     async Login () {
       const { email, senha } = this
 
       try {
         const res = await this.$firebase.auth().signInWithEmailAndPassword(email, senha)
+
         this.$router.push('home-admin')
-
-        var user = await this.$firebase.auth().currentUser;
-
-        if (user != null) {
-          console.log(user.email)
-        }
-
       } catch (error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        console.log(error)
+        
+        alert('USUÁRIO NÃO ENCONTRADO')
       }
-
 
     }
   }

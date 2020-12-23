@@ -14,7 +14,6 @@
       <botao-link to="/cadastro-noticia" nomeLink="Adicionar"></botao-link>
       <div
         class="logout"
-        style=""
         @click="logout()"
         ><span>Logout</span></div
       >
@@ -41,9 +40,10 @@ export default {
 
           this.$router.push('admin')
         })
-        .catch(function (error) {
-          console.log(error)
-        })
+        .catch((error) => {
+          console.error(error)
+        }
+      )
     }
   }
 }
