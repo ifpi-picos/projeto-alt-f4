@@ -71,7 +71,16 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      nome: ''
+    }
+  },
+  methods: {
+    enviarEmail () {}
+  }
+}
 </script>
 
 <style scoped>
