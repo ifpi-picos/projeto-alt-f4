@@ -4,7 +4,7 @@
         <!-- faz com que tudo centralizado mr-auto ml auto -->
        <div class="div.col-lg-8 col-md-10 mx-3 mr-auto ml-auto"> 
         <p class="h5 col-md-8 mr-auto ml-auto text-justify">
-          A <b>radical dreamers</b>
+          A <b>Radical Dreamers</b>
           é uma empresa de desenvolvimento de jogos e de soluções tecnologicas
           criativas
         </p>
