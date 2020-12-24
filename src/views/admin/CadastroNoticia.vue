@@ -22,7 +22,7 @@
 
 <script>
 import SidebarTitulo from '../../components/SidebarTitulo.vue'
-import Editor from '../../components/Editor.vue'
+import Editor from '../../components/Editor'
 
 export default {
   components: {

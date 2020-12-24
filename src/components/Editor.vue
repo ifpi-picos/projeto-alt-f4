@@ -1,34 +1,67 @@
 <template>
-  <div>
+  <form @submit.prevent="store">
     <ckeditor
       :editor="editor"
-      tag-name="textarea"
-      v-model="form.post_text"
+      v-model="form.content"
+      :error-messages="errors.content"
       :config="editorConfig"
-    ></ckeditor>
-  </div>
+    />
+  </form>
 </template>
 
 <script>
 import CKEditor from '@ckeditor/ckeditor5-vue2'
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+import UploadAdapter from '../uploadadapter'
 
 export default {
-  name: 'Editor',
-
-  data() {
+  data () {
     return {
-      editor: ClassicEditor,
-      editorData: '<p>Your Post Content</p>',
-      editorConfig:{
-        language: 'pt-br'
-      },
       form: {
-        post_text: '',
-        post_title: '',
-        post_image: ''
+        content: null
+      },
+      editor: ClassicEditor,
+      editorConfig: {
+        toolbar: [
+          'heading',
+          '|',
+          'bold',
+          'italic',
+          'link',
+          'bulletedList',
+          'numberedList',
+          '|',
+          'insertTable',
+          '|',
+          'imageUpload',
+          'mediaEmbed',
+          '|',
+          'undo',
+          'redo'
+        ],
+        table: {
+          toolbar: ['tableColumn', 'tableRow', 'mergeTableCells']
+        },
+        extraPlugins: [this.uploader],
+        language: 'nl'
       }
     }
   },
+
+  methods: {
+    store () {
+      // Some code
+    },
+
+    uploader (editor) {
+      editor.plugins.get('FileRepository').createUploadAdapter = loader => {
+        return new UploadAdapter(loader)
+      }
+    }
+  },
+
+  components: {
+    ckeditor: CKEditor.component
+  }
 }
 </script>
