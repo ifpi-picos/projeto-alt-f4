@@ -10,17 +10,19 @@
         numero de celular
         texto area -->
     <fieldset>
+      <!-- {{dados.nomeContato}} -->
       <b-card class=" col-md-6 ml-auto mr-auto border-0">
-        <form
-          action="https://radical-dreamers-api.herokuapp.com/"
-          method="POST"
-        >
+        <div v-if="msgSucesso" class="alert alert-success" role="alert">
+          {{msgSucesso}}
+        </div>
+        <form @submit.prevent="enviarEmail()">
           <p class="h2 text-center mb-4">Contate-nos</p>
 
           <!-- Fala o nome -->
           <label for="nome" class="grey-text"> </label>
           <input
             type="text"
+            v-model="dados.nomeContato"
             id="nome"
             class="form-control"
             placeholder="Digite Seu Nome"
@@ -33,6 +35,7 @@
           <label for="email" class="grey-text"></label>
           <input
             type="email"
+            v-model="dados.emailContato"
             id="email"
             class="form-control"
             placeholder="Digite Seu Email"
@@ -44,6 +47,7 @@
           <label for="telefone" class="grey-text"> </label>
           <input
             type="text"
+            v-model="dados.telefoneContato"
             id="telefone"
             class="form-control"
             placeholder="Digite Seu Telefone"
@@ -55,7 +59,8 @@
           <label for="mensagem1" class="grey-text"> </label>
           <textarea
             type="text"
-            id="mensagem2"
+            v-model="dados.mensagem"
+            id="mensagem1"
             class="form-control"
             rows="3"
             placeholder="Digite Sua Mensagem"
@@ -71,14 +76,32 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data () {
     return {
-      nome: ''
+      dados: {
+      nomeContato: '',
+      emailContato: '',
+      telefoneContato: '',
+      mensagem: '',
+      },
+      msgSucesso: ''
     }
   },
   methods: {
-    enviarEmail () {}
+    enviarEmail() {
+      // console.log("Cadastro com sucessos", this.dados)
+      axios.post('https://radical-dreamers-api.herokuapp.com/', this.dados).then((retorno) => {
+        this.msgSucesso = retorno.data;
+        this.dados.nomeContato = ''
+        this.dados.emailContato = ''
+        this.dados.telefoneContato = ''
+        this.dados.mensagem = ''
+      }).catch((erro) => {
+        console.error(erro)
+      })
+    }
   }
 }
 </script>
