@@ -19,21 +19,21 @@
 
 <script>
 import BotaoLink from '../components/BotaoLink.vue'
-import firebase from 'firebase/app'
+// import firebase from 'firebase/app'
 
 export default {
   components: {
     BotaoLink
   },
   methods: {
-    logout: () => {
-      firebase
+    logout () {
+      this.$firebase
         .auth()
         .signOut()
         .then(() => {
           console.log('logout com sucesso')
 
-          this.$router.push('/admin')
+          this.$router.push('login')
         })
         .catch(function (error) {
           console.error(error)

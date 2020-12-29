@@ -52,14 +52,15 @@ const routes = [
     ]
   },
   {
-    path: '/admin',
-    name: 'admin',
+    path: '/login',
+    name: 'login',
     component: () => import('../views/admin/Login.vue')
   },
   {
     path: '/admin',
     name: 'Sidebar',
     component: Sidebar,
+    redirect: '/login',
     children: [
       {
         path: '/home-admin',
@@ -81,24 +82,24 @@ const router = new VueRouter({
   routes
 })
 
-router.beforeEach((to, from, next) => {
-  const PAGINA_NAO_AUTHENTICADO = ['/home', '/games', '/game/:id', '/noticias', '/noticia/:id', '/sobre', '/contato']
-  // const HOME = '/home'
-  const LOGIN = '/admin'
-  const PAGINA_INICIAL_AUTHENTICADO = '/home-admin'
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      if (to.path === LOGIN) {
-        next({ path: PAGINA_INICIAL_AUTHENTICADO })
-      }
-      next()
-    } else {
-      if (to.path !== PAGINA_NAO_AUTHENTICADO) {
-        next({ path: LOGIN })
-      }
-    }
-  })
-  next()
-})
+// router.beforeEach((to, from, next) => {
+//   const PAGINA_NAO_AUTHENTICADO = ['/home', '/games', '/game/:id', '/noticias', '/noticia/:id', '/sobre', '/contato', '/login']
+//   const HOME = '/home'
+//   const LOGIN = '/login'
+//   const PAGINA_INICIAL_AUTHENTICADO = '/home-admin'
+//   firebase.auth().onAuthStateChanged((user) => {
+//     if (user) {
+//       if (to.path === LOGIN) {
+//         next({ path: PAGINA_INICIAL_AUTHENTICADO })
+//       }
+//       next()
+//     } else {
+//       if (to.path !== PAGINA_NAO_AUTHENTICADO) {
+//         next({ path: HOME })
+//       }
+//     }
+//   })
+//   next()
+// })
 
 export default router
