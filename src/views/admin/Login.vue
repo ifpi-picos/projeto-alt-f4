@@ -67,7 +67,7 @@ export default {
       try {
         const res = await this.$firebase.auth().signInWithEmailAndPassword(email, senha)
 
-        this.$router.push('home-admin')
+        this.$router.replace('home-admin')
       } catch (error) {
         console.log(error)
         

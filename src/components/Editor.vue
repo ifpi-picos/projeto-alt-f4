@@ -2,8 +2,8 @@
   <form @submit.prevent="store">
     <ckeditor
       :editor="editor"
+      tag-name="textarea"
       v-model="form.content"
-      :error-messages="errors.content"
       :config="editorConfig"
     />
   </form>
@@ -12,56 +12,31 @@
 <script>
 import CKEditor from '@ckeditor/ckeditor5-vue2'
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
-import UploadAdapter from '../uploadadapter'
+import MyUploadAdapter from '@/plugins/UploadAdapter'
 
 export default {
+  name: 'Editor',
+
   data () {
     return {
-      form: {
-        content: null
-      },
       editor: ClassicEditor,
+      editorData: '<p>Your Post Content</p>',
       editorConfig: {
-        toolbar: [
-          'heading',
-          '|',
-          'bold',
-          'italic',
-          'link',
-          'bulletedList',
-          'numberedList',
-          '|',
-          'insertTable',
-          '|',
-          'imageUpload',
-          'mediaEmbed',
-          '|',
-          'undo',
-          'redo'
-        ],
-        table: {
-          toolbar: ['tableColumn', 'tableRow', 'mergeTableCells']
-        },
-        extraPlugins: [this.uploader],
-        language: 'nl'
+        language: 'pt-br',
+        extraPlugins: [this.uploader]
+      },
+      form: {
+        content: ''
       }
     }
   },
 
   methods: {
-    store () {
-      // Some code
-    },
-
     uploader (editor) {
       editor.plugins.get('FileRepository').createUploadAdapter = loader => {
-        return new UploadAdapter(loader)
+        return new MyUploadAdapter(loader)
       }
     }
-  },
-
-  components: {
-    ckeditor: CKEditor.component
   }
 }
 </script>
