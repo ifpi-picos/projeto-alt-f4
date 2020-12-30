@@ -16,7 +16,7 @@
         </b-form-group>
 
         <label for="descricao">Descrição:</label>
-        <editor id="descricao" v-model="noticia.descricao"></editor>
+        <editor id="descricao" model='noticia.descricao'></editor>
 
         <b-form-group class="mt-3" v-slot="{ ariaDescribedby }">
           <b-form-checkbox-group

@@ -3,7 +3,7 @@
     <ckeditor
       :editor="editor"
       tag-name="textarea"
-      v-model="form.content"
+      :v-model="model"
       :config="editorConfig"
     />
   </form>
@@ -17,6 +17,13 @@ import MyUploadAdapter from '@/plugins/UploadAdapter'
 export default {
   name: 'Editor',
 
+  props: {
+    model: {
+      type: String,
+      default: ''
+    }
+  },
+
   data () {
     return {
       editor: ClassicEditor,
@@ -24,9 +31,6 @@ export default {
       editorConfig: {
         language: 'pt-br',
         extraPlugins: [this.uploader]
-      },
-      form: {
-        content: ''
       }
     }
   },

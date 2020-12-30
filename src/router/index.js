@@ -1,7 +1,7 @@
 // import { from } from 'core-js/core/array'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import firebase from 'firebase/app'
+// import firebase from 'firebase/app'
 import Padrao from '../template/Padrao.vue'
 import Sidebar from '../template/Sidebar.vue'
 
