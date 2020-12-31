@@ -52,7 +52,7 @@ const routes = [
     ]
   },
   {
-    path: '/admin',
+    path: '/login',
     name: 'login',
     component: () => import('../views/admin/Login.vue')
   },
@@ -60,6 +60,7 @@ const routes = [
     path: '/admin',
     name: 'Sidebar',
     component: Sidebar,
+    redirect: '/login',
     children: [
       {
         path: '/home-admin',
@@ -82,8 +83,9 @@ const router = new VueRouter({
 })
 
 // router.beforeEach((to, from, next) => {
-//   const HOME = '/'
-//   const LOGIN = '/admin'
+//   const PAGINA_NAO_AUTHENTICADO = ['/home', '/games', '/game/:id', '/noticias', '/noticia/:id', '/sobre', '/contato', '/login']
+//   const HOME = '/home'
+//   const LOGIN = '/login'
 //   const PAGINA_INICIAL_AUTHENTICADO = '/home-admin'
 //   firebase.auth().onAuthStateChanged((user) => {
 //     if (user) {
@@ -92,7 +94,7 @@ const router = new VueRouter({
 //       }
 //       next()
 //     } else {
-//       if (to.path !== HOME) {
+//       if (to.path !== PAGINA_NAO_AUTHENTICADO) {
 //         next({ path: HOME })
 //       }
 //     }

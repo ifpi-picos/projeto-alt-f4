@@ -22,9 +22,9 @@
       </div>
 
       <div class="content-right">
-        <a href="https://www.instagram.com/radicaldreamersgames/"><img src="img/svg/insta.svg"></a>
-        <a href="https://twitter.com/rdg_ltda"><img src="img/svg/twitter.svg"></a>
-        <a href="https://www.facebook.com/RadicalDreamersGames"><img src="img/svg/facebook.svg"></a>
+          <a href="https://www.instagram.com/radicaldreamersgames/"><img src="img/svg/insta.svg"></a>
+          <a href="https://twitter.com/rdg_ltda"><img src="img/svg/twitter.svg"></a>
+          <a href="https://www.facebook.com/RadicalDreamersGames"><img src="img/svg/facebook.svg"></a>
       </div>
     </footer>
   </div>

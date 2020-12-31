@@ -2,9 +2,8 @@
   <div class="container-inicial">
     <sidebar-titulo nomeTitulo="Notícias"></sidebar-titulo>
     <div class="container">
-      <b-table striped hover :items="noticia" class=""></b-table>
+      <b-table striped hover :items="noticias"></b-table>
     </div>
-
   </div>
 </template>
 
@@ -15,36 +14,38 @@ export default {
   components: {
     SidebarTitulo
   },
-  data() {
-      return {
-        noticia: [],
-        
-      }
+  data () {
+    return {
+      noticias: []
+    }
   },
+
+  mounted() {
+    this.consultar()
+  },
+
   methods: {
-    salvar() {
-      this.$firebase.firestore().collection('noticias')
-        .get().then((doc) => {
-          if (doc.exists) {
-            console.log("Document data:", doc.data());
-          } else {
-            // doc.data() will be undefined in this case
-            console.log("No such document!");
-          }
+    consultar () {
+      const noticias = this.$firebase.firestore().collection('noticias')
+
+      noticias.get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            this.noticias.push(doc.data())
+            // console.log(doc.id, ' => ', doc.data())
+          });
         })
-        .catch(function(error) {
-            console.log("Error getting document:", error);
-        });
+        .catch((error) => {
+          console.error(error);
+        })
     }
   }
 }
 </script>
 
 <style scoped>
-  .container-inicial {
-    width: 100vw;
-    height: 100vh;
-
-  }
-
+.container-inicial {
+  width: 100vw;
+  height: 100vh;
+}
 </style>
