@@ -21,18 +21,17 @@
             class="mb-2"
             id="img-card"
             required
-            v-model="noticia.cardImg"
             placeholder="Escolha um arquivo ou solte-o aqui..."
             drop-placeholder="Solte o arquivo aqui..."
-            @change="previewImage" 
+            @change="previewImage"
             accept="image/*"
           ></b-form-file>
 
-          <div v-if="imageData!=null">
-            <img class="preview" :src="picture">
-            <br>
-            <br>
-            <b-button @click="onUpload">Upload</b-button>
+          <div v-if="imageData != null">
+            <img class="preview" :src="noticia.cardImg" />
+            <br />
+            <br />
+            <b-button @click="onUpload" variant="primary">Upload</b-button>
           </div>
         </b-form-group>
 
@@ -109,7 +108,6 @@ export default {
         autor: ''
       },
       imageData: null,
-      picture: null,
       opcoes: [
         { text: 'Ocultar', value: 'ocultar' },
         { text: 'Destaques', value: 'destaques' },
@@ -127,6 +125,7 @@ export default {
         .add(this.noticia)
         .then(docRef => {
           console.log(docRef.id)
+          alert('Noticia Adicionada')
         })
         .catch(error => {
           console.error(error)
@@ -135,34 +134,42 @@ export default {
         })
     },
 
-    previewImage(event) {
-      this.picture=null;
-      this.imageData = event.target.files[0];
+    previewImage (event) {
+      this.noticia.cardImg = null
+      this.imageData = event.target.files[0]
     },
 
-    onUpload(){
-      this.picture=null;
-      const storageRef= this.$firebase.storage().ref('cards/').put(this.imageData);
-      
-      storageRef.on(`state_changed`,snapshot=>{
-        this.uploadValue = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
-      }, error=>{console.log(error.message)},
-      ()=>{this.uploadValue=100;
-        storageRef.snapshot.ref.getDownloadURL().then((url)=>{
-          this.picture =url;
-        });
-      }
-      );
+    onUpload () {
+      this.noticia.cardImg = null
+      const storageRef = this.$firebase
+        .storage()
+        .ref(`cards/${this.imageData.name}`)
+        .put(this.imageData)
+
+      storageRef.on(
+        `state_changed`,
+        snapshot => {
+          this.uploadValue =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        },
+        error => {
+          console.log(error.message)
+        },
+        () => {
+          this.uploadValue = 100
+          storageRef.snapshot.ref.getDownloadURL().then(url => {
+            this.noticia.cardImg = url
+          })
+        }
+      )
     }
-
-
   }
 }
 </script>
 
 <style scoped>
 img.preview {
-    width: 200px;
+  width: 250px;
 }
 
 label {
