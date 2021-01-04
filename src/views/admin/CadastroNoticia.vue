@@ -24,8 +24,16 @@
             v-model="noticia.cardImg"
             placeholder="Escolha um arquivo ou solte-o aqui..."
             drop-placeholder="Solte o arquivo aqui..."
+            @change="previewImage" 
             accept="image/*"
           ></b-form-file>
+
+          <div v-if="imageData!=null">
+            <img class="preview" :src="picture">
+            <br>
+            <br>
+            <b-button @click="onUpload">Upload</b-button>
+          </div>
         </b-form-group>
 
         <label for="conteudo">Conteúdo:</label>
@@ -72,7 +80,7 @@
         pill
         variant="primary"
         class="mt-4 mb-4"
-        @click="addNoticia(), onUpload()"
+        @click="addNoticia()"
       >
         Adicionar noticia
       </b-button>
@@ -94,6 +102,7 @@ export default {
     return {
       noticia: {
         titulo: '',
+        cardImg: null,
         conteudo: '',
         selecao: [],
         data: null,
@@ -126,20 +135,46 @@ export default {
         })
     },
 
-    onUpload () {
-      this.picture = null
-      const storageRef = this.$firebase
-        .storage()
-        .ref('cards/')
-        .put(this.imageData)
+    upload() {
+      const cardImg = document.querySelector('#img-card');
+
+      cardImg.addEventListener('change', (e) => {
+        var file = e.target.files[0];
+
+        var storageRef = this.$firebase.storage().ref('cards/' + file.name);
+
+        var task = storageRef.put(file);
+      })
+    },
+
+    previewImage(event) {
+      this.picture=null;
+      this.imageData = event.target.files[0];
+    },
+
+    onUpload(){
+      this.picture=null;
+      const storageRef= this.$firebase.storage().ref(`${this.imageData.name}`).put(this.imageData);
+      
+      storageRef.on(`state_changed`,snapshot=>{
+        this.uploadValue = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+      }, error=>{console.log(error.message)},
+      ()=>{this.uploadValue=100;
+        storageRef.snapshot.ref.getDownloadURL().then((url)=>{
+          this.picture =url;
+        });
+      }
+      );
     }
+
+
   }
 }
 </script>
 
 <style scoped>
 img.preview {
-  width: 200px;
+    width: 200px;
 }
 
 label {

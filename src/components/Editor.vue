@@ -32,18 +32,25 @@ export default {
     }
   },
 
-  props: {
-    model: {
-      type: String,
-      default: ''
-    }
-  },
-
   methods: {
     uploader (editor) {
       editor.plugins.get('FileRepository').createUploadAdapter = loader => {
         return new MyUploadAdapter(loader)
       }
+    },
+    addNoticia () {
+      const conteudoEditor = this.$firebase.firestore().collection('noticias')
+
+      conteudoEditor
+        .add(this.noticia)
+        .then(docRef => {
+          console.log(docRef.id)
+        })
+        .catch(error => {
+          console.error(error)
+
+          alert('Usuário não autorizado!!!')
+        })
     }
   }
 }
