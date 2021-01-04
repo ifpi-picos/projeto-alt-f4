@@ -15,8 +15,25 @@
           ></b-form-input>
         </b-form-group>
 
-        <label for="descricao">Descrição:</label>
-        <editor id="descricao" model='noticia.descricao'></editor>
+        <b-form-group>
+          <label for="img-card">Imagem Card:</label>
+          <b-form-file
+            class="mb-2"
+            id="img-card"
+            required
+            v-model="noticia.cardImg"
+            placeholder="Escolha um arquivo ou solte-o aqui..."
+            drop-placeholder="Solte o arquivo aqui..."
+            accept="image/*"
+          ></b-form-file>
+        </b-form-group>
+
+        <label for="conteudo">Conteúdo:</label>
+        <editor
+          id="conteudo"
+          v-model="noticia.conteudo"
+          placeholder="Escreva aqui..."
+        ></editor>
 
         <b-form-group class="mt-3" v-slot="{ ariaDescribedby }">
           <b-form-checkbox-group
@@ -54,8 +71,8 @@
         type="button"
         pill
         variant="primary"
-        class="mt-4"
-        @click="addNoticia()"
+        class="mt-4 mb-4"
+        @click="addNoticia(), onUpload()"
       >
         Adicionar noticia
       </b-button>
@@ -77,11 +94,13 @@ export default {
     return {
       noticia: {
         titulo: '',
-        descricao: '',
+        conteudo: '',
         selecao: [],
         data: null,
         autor: ''
       },
+      imageData: null,
+      picture: null,
       opcoes: [
         { text: 'Ocultar', value: 'ocultar' },
         { text: 'Destaques', value: 'destaques' },
@@ -95,18 +114,34 @@ export default {
     addNoticia () {
       const noticia = this.$firebase.firestore().collection('noticias')
 
-      noticia.add(this.noticia).then((docRef) => {
-        console.log(docRef.id)
-      })
-      .catch((error) => {
-        console.error(error);
-      })
+      noticia
+        .add(this.noticia)
+        .then(docRef => {
+          console.log(docRef.id)
+        })
+        .catch(error => {
+          console.error(error)
+
+          alert('Usuário não autorizado!!!')
+        })
+    },
+
+    onUpload () {
+      this.picture = null
+      const storageRef = this.$firebase
+        .storage()
+        .ref('cards/')
+        .put(this.imageData)
     }
   }
 }
 </script>
 
 <style scoped>
+img.preview {
+  width: 200px;
+}
+
 label {
   font-size: 20px;
   font-weight: 500;
