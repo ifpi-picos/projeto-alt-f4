@@ -160,6 +160,7 @@ export default {
   methods: {
     addNoticia () {
       console.log('editorData: ', this.editorData)
+      this.noticia.conteudo = this.editorData
       // const noticia = this.$firebase.firestore().collection('noticias')
       // noticia
       //   .add(this.noticia)
