@@ -135,18 +135,6 @@ export default {
         })
     },
 
-    upload() {
-      const cardImg = document.querySelector('#img-card');
-
-      cardImg.addEventListener('change', (e) => {
-        var file = e.target.files[0];
-
-        var storageRef = this.$firebase.storage().ref('cards/' + file.name);
-
-        var task = storageRef.put(file);
-      })
-    },
-
     previewImage(event) {
       this.picture=null;
       this.imageData = event.target.files[0];
@@ -154,7 +142,7 @@ export default {
 
     onUpload(){
       this.picture=null;
-      const storageRef= this.$firebase.storage().ref(`${this.imageData.name}`).put(this.imageData);
+      const storageRef= this.$firebase.storage().ref('cards/').put(this.imageData);
       
       storageRef.on(`state_changed`,snapshot=>{
         this.uploadValue = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
