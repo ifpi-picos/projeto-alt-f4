@@ -19,12 +19,13 @@
 
 
             <div>
-                <div >
-                    <div >
-                      <a href=""><img src="img/svg/insta.svg"></a>
-                      <a href=""><img src="img/svg/twitter.svg"></a>
-                      <a href=""><img src="img/svg/github.svg"></a>
+                <div ><br>
+                    <div class="content-right">
+                      <a href="https://www.instagram.com/radicaldreamersgames/"><img src="/img/svg/insta.svg"></a>
+                      <a href="https://twitter.com/rdg_ltda"><img src="/img/svg/twitter.svg"></a>
+                      <a href="https://www.facebook.com/RadicalDreamersGames"><img src="/img/svg/facebook.svg"></a>
                     </div>
+                    <br>
 
                     <p>
                         In lobortis pharetra mattis. Morbi nec nibh iaculis, bibendum augue a, ultrices nulla. Nunc velit ante, lacinia id tincidunt eget, faucibus nec nisl. In mauris purus, bibendum et gravida dignissim, venenatis commodo lacus. Duis consectetur quis nisi nec
@@ -60,7 +61,7 @@
 export default {
   data() {
     return {
-      noticia: {
+      Noticia: {
         title: "Avelar Chronicles",
       },
     };
@@ -81,8 +82,7 @@ p{
     padding-bottom: 15px;
 }
 
-
-.logo-rodape h3 {
+.logo-rodape, h3 {
     font-size: 28px;
 }
 
@@ -91,5 +91,12 @@ b{
     padding: 20px;
 }
 
+img{
+  width: 30px;
+}
+
+.content-right a{
+  padding: 10px;
+}
 
 </style>

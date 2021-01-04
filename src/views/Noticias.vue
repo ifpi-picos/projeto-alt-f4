@@ -1,19 +1,22 @@
 <template>
-  <div class="container-fluid">
+  <div class="container">
     <section class="p-0 row justify-content-center">
-      <div v-for="card in cards" :key="card.id" class="p-0 col-md-3 col-sm-6">
+      <div v-for="card in cards" :key="card.id" class=" col-md-4 col-sm-12">
         <b-card
           title="Card Title"
-          img-src="img/900X900/AVELAR.png"
+          img-src="img/900X900/MEMEMCARDARENA.png"
           img-alt="Image"
           img-top
           tag="article"
-          style="max-width: 17.5rem"
-          class="my-3 mx-3 p-0"
+          style="max-width: 20rem"
+          class="mb-4"
           @click="showDetails(card.id)"
         >
-          <b-card-text> Some quick example text to build on the card title </b-card-text>
+        <div>
+          <b-card-text>  <p>Card game online sobre os memes classicos</p> </b-card-text>
+          <p><span>Postado por Cinthia Raquel em 11 de fevereiro de 2020 </span> </p>
           <b-button href="/Noticia" variant="secondary">Noticia</b-button>
+        </div>
         </b-card>
       </div>
     </section>
@@ -82,4 +85,18 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  p span{
+    font-size: 12px;
+    
+  }
+
+  b-card-text, p{
+    font-size: 20px;
+  }
+</style>
