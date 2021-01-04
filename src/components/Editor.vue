@@ -1,10 +1,13 @@
 <template>
-  <ckeditor
-    :editor="editor"
-    tag-name="textarea"
-    v-model="editorData"
-    :config="editorConfig"
-  />
+  <div>
+    <ckeditor
+      :editor="editor"
+      tag-name="textarea"
+      v-model="editorData"
+      :config="editorConfig"
+    />
+    <button @click="teste">Teste</button>
+  </div>
 </template>
 
 <script>
@@ -23,11 +26,25 @@ export default {
         extraPlugins: [this.uploader],
         heading: {
           options: [
-            { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-            { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-            { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+            {
+              model: 'paragraph',
+              title: 'Paragraph',
+              class: 'ck-heading_paragraph'
+            },
+            {
+              model: 'heading1',
+              view: 'h1',
+              title: 'Heading 1',
+              class: 'ck-heading_heading1'
+            },
+            {
+              model: 'heading2',
+              view: 'h2',
+              title: 'Heading 2',
+              class: 'ck-heading_heading2'
+            }
           ]
-        },
+        }
       }
     }
   },
@@ -40,6 +57,9 @@ export default {
   },
 
   methods: {
+    teste () {
+      console.log('editorData: ', this.editorData)
+    },
     uploader (editor) {
       editor.plugins.get('FileRepository').createUploadAdapter = loader => {
         return new MyUploadAdapter(loader)

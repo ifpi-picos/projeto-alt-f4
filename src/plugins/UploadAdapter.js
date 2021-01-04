@@ -1,16 +1,27 @@
+import firebase from 'firebase/app'
+
 class UploadAdapter {
-  constructor (loader) {
+  constructor (loader, firebase) {
     // The file loader instance to use during the upload.
     this.loader = loader
   }
 
   // Starts the upload process.
   upload () {
-    return this.loader.file.then(file => {
-      console.log(file)
-      // aqui deve ser colocado o código que vai salvar a imagem no storade
-      // do firebase e retornar a URL da imagem pra ser salva no firestore junto
-      // com o conteúdo da postagem
+    return this.loader.file.then(async file => {
+      try {
+        const format = file.name.split('.')[1]
+        const filePath = `images/${new Date().getTime()}.${format}`
+        const fileSnapshot = await firebase
+          .storage()
+          .ref(filePath)
+          .put(file)
+        const url = await fileSnapshot.ref.getDownloadURL()
+        console.log('url: ', url)
+        return { default: url }
+      } catch (error) {
+        console.error(error)
+      }
     })
   }
 

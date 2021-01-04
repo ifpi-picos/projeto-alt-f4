@@ -29,11 +29,18 @@
         </b-form-group>
 
         <label for="conteudo">Conteúdo:</label>
-        <editor
+        <!-- <editor
           id="conteudo"
           v-model="noticia.conteudo"
           placeholder="Escreva aqui..."
-        ></editor>
+        ></editor> -->
+
+        <ckeditor
+          :editor="editor"
+          tag-name="textarea"
+          v-model="editorData"
+          :config="editorConfig"
+        />
 
         <b-form-group class="mt-3" v-slot="{ ariaDescribedby }">
           <b-form-checkbox-group
@@ -72,7 +79,7 @@
         pill
         variant="primary"
         class="mt-4 mb-4"
-        @click="addNoticia(), onUpload()"
+        @click="addNoticia()"
       >
         Adicionar noticia
       </b-button>
@@ -82,12 +89,18 @@
 
 <script>
 import SidebarTitulo from '../../components/SidebarTitulo.vue'
-import Editor from '../../components/Editor'
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+import MyUploadAdapter from '@/plugins/UploadAdapter'
 
 export default {
   components: {
-    SidebarTitulo,
-    Editor
+    SidebarTitulo
+  },
+  props: {
+    model: {
+      type: String,
+      default: ''
+    }
   },
 
   data () {
@@ -106,24 +119,50 @@ export default {
         { text: 'Destaques', value: 'destaques' },
         { text: 'Notícia', value: 'noticia' },
         { text: 'Game', value: 'game' }
-      ]
+      ],
+      editor: ClassicEditor,
+      editorData: '',
+      editorConfig: {
+        language: 'pt-br',
+        extraPlugins: [this.uploader],
+        heading: {
+          options: [
+            {
+              model: 'paragraph',
+              title: 'Paragraph',
+              class: 'ck-heading_paragraph'
+            },
+            {
+              model: 'heading1',
+              view: 'h1',
+              title: 'Heading 1',
+              class: 'ck-heading_heading1'
+            },
+            {
+              model: 'heading2',
+              view: 'h2',
+              title: 'Heading 2',
+              class: 'ck-heading_heading2'
+            }
+          ]
+        }
+      }
     }
   },
 
   methods: {
     addNoticia () {
-      const noticia = this.$firebase.firestore().collection('noticias')
-
-      noticia
-        .add(this.noticia)
-        .then(docRef => {
-          console.log(docRef.id)
-        })
-        .catch(error => {
-          console.error(error)
-
-          alert('Usuário não autorizado!!!')
-        })
+      console.log('editorData: ', this.editorData)
+      // const noticia = this.$firebase.firestore().collection('noticias')
+      // noticia
+      //   .add(this.noticia)
+      //   .then(docRef => {
+      //     console.log(docRef.id)
+      //   })
+      //   .catch(error => {
+      //     console.error(error)
+      //     alert('Usuário não autorizado!!!')
+      //   })
     },
 
     onUpload () {
@@ -132,6 +171,12 @@ export default {
         .storage()
         .ref('cards/')
         .put(this.imageData)
+    },
+
+    uploader (editor) {
+      editor.plugins.get('FileRepository').createUploadAdapter = loader => {
+        return new MyUploadAdapter(loader)
+      }
     }
   }
 }
