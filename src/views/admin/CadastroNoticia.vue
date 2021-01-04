@@ -21,11 +21,18 @@
             class="mb-2"
             id="img-card"
             required
-            v-model="noticia.cardImg"
             placeholder="Escolha um arquivo ou solte-o aqui..."
             drop-placeholder="Solte o arquivo aqui..."
+            @change="previewImage"
             accept="image/*"
           ></b-form-file>
+
+          <div v-if="imageData != null">
+            <img class="preview" :src="noticia.cardImg" />
+            <br />
+            <br />
+            <b-button @click="onUpload" variant="primary">Upload</b-button>
+          </div>
         </b-form-group>
 
         <label for="conteudo">Conteúdo:</label>
@@ -107,13 +114,13 @@ export default {
     return {
       noticia: {
         titulo: '',
+        cardImg: null,
         conteudo: '',
         selecao: [],
         data: null,
         autor: ''
       },
       imageData: null,
-      picture: null,
       opcoes: [
         { text: 'Ocultar', value: 'ocultar' },
         { text: 'Destaques', value: 'destaques' },
@@ -165,11 +172,16 @@ export default {
       //   })
     },
 
+    previewImage (event) {
+      this.noticia.cardImg = null
+      this.imageData = event.target.files[0]
+    },
+
     onUpload () {
-      this.picture = null
+      this.noticia.cardImg = null
       const storageRef = this.$firebase
         .storage()
-        .ref('cards/')
+        .ref(`cards/${this.imageData.name}`)
         .put(this.imageData)
     },
 
@@ -184,7 +196,7 @@ export default {
 
 <style scoped>
 img.preview {
-  width: 200px;
+  width: 250px;
 }
 
 label {
