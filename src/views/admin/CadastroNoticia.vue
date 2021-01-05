@@ -36,16 +36,10 @@
         </b-form-group>
 
         <label for="conteudo">Conteúdo:</label>
-        <!-- <editor
-          id="conteudo"
-          v-model="noticia.conteudo"
-          placeholder="Escreva aqui..."
-        ></editor> -->
-
         <ckeditor
           :editor="editor"
           tag-name="textarea"
-          v-model="editorData"
+          v-model="noticia.editorData"
           :config="editorConfig"
         />
 
@@ -115,10 +109,10 @@ export default {
       noticia: {
         titulo: '',
         cardImg: null,
-        conteudo: '',
         selecao: [],
         data: null,
-        autor: ''
+        autor: '',
+        editorData: ''
       },
       imageData: null,
       opcoes: [
@@ -128,7 +122,6 @@ export default {
         { text: 'Game', value: 'game' }
       ],
       editor: ClassicEditor,
-      editorData: '',
       editorConfig: {
         language: 'pt-br',
         extraPlugins: [this.uploader],
@@ -159,17 +152,18 @@ export default {
 
   methods: {
     addNoticia () {
-      console.log('editorData: ', this.editorData)
-      // const noticia = this.$firebase.firestore().collection('noticias')
-      // noticia
-      //   .add(this.noticia)
-      //   .then(docRef => {
-      //     console.log(docRef.id)
-      //   })
-      //   .catch(error => {
-      //     console.error(error)
-      //     alert('Usuário não autorizado!!!')
-      //   })
+      const noticia = this.$firebase.firestore().collection('noticias')
+      noticia
+        .add(this.noticia)
+        .then(docRef => {
+          console.log(docRef.id)
+
+          alert("Notícia Adicionada")
+        })
+        .catch(error => {
+          console.error(error)
+          alert('Usuário não autorizado!!!')
+        })
     },
 
     previewImage (event) {
@@ -183,6 +177,23 @@ export default {
         .storage()
         .ref(`cards/${this.imageData.name}`)
         .put(this.imageData)
+
+      storageRef.on(
+        `state_changed`,
+        snapshot => {
+          this.uploadValue =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        },
+        error => {
+          console.log(error.message)
+        },
+        () => {
+          this.uploadValue = 100
+          storageRef.snapshot.ref.getDownloadURL().then(url => {
+            this.noticia.cardImg = url
+          })
+        }
+      )
     },
 
     uploader (editor) {
