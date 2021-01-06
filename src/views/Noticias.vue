@@ -3,7 +3,7 @@
     <section class="p-0 row justify-content-center">
       <div v-for="card in cards" :key="card.id" class=" col-md-4 col-sm-12">
         <b-card
-          title="Card Title"
+          title="Meme card"
           img-src="img/900X900/MEMEMCARDARENA.png"
           img-alt="Image"
           img-top
@@ -45,36 +45,7 @@ export default {
           description:
             "Some quick example text to build on the card title and make up the bulk of the card's content.",
         },
-        {
-          title: "Title 4",
-          id: 4,
-          description:
-            "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        },
-        {
-          title: "Title 5",
-          id: 5,
-          description:
-            "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        },
-        {
-          title: "Title 6",
-          id: 6,
-          description:
-            "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        },
-        {
-          title: "Title 7",
-          id: 7,
-          description:
-            "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        },
-        {
-          title: "Title 8",
-          id: 8,
-          description:
-            "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        },
+        
       ],
     };
   },
