@@ -1,11 +1,11 @@
 <template >
-  <div class="container">
-
+  <div class="container-fluid">
+        <div class="m-5">
             <div >
                 <div>
-                    <h1>Meme Card</h1>
+                    <h1>{{ Noticia.title }}</h1>
 
-                    <h4> Card game online sobre os memes classicos </h4>
+                    <h4> {{ Noticia.subtitle }} </h4>
 
                     <div>
                         <small><a href="" title="">21 July, 2019</a></small>
@@ -54,6 +54,7 @@
                 </div>
 
             </div>
+        </div>      
   </div>
 </template>
 
@@ -62,7 +63,7 @@ export default {
   data() {
     return {
       Noticia: {
-        title: "Avelar Chronicles",
+        title: "Meme card",
       },
     };
   },
