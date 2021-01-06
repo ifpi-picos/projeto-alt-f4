@@ -15,8 +15,33 @@
           ></b-form-input>
         </b-form-group>
 
-        <label for="descricao">Descrição:</label>
-        <editor id="descricao" model='noticia.descricao'></editor>
+        <b-form-group>
+          <label for="img-card">Imagem Card:</label>
+          <b-form-file
+            class="mb-2"
+            id="img-card"
+            required
+            placeholder="Escolha um arquivo ou solte-o aqui..."
+            drop-placeholder="Solte o arquivo aqui..."
+            @change="previewImage"
+            accept="image/*"
+          ></b-form-file>
+
+          <div v-if="imageData != null">
+            <img class="preview" :src="noticia.cardImg" />
+            <br />
+            <br />
+            <b-button @click="onUpload" variant="primary">Upload</b-button>
+          </div>
+        </b-form-group>
+
+        <label for="conteudo">Conteúdo:</label>
+        <ckeditor
+          :editor="editor"
+          tag-name="textarea"
+          v-model="noticia.editorData"
+          :config="editorConfig"
+        />
 
         <b-form-group class="mt-3" v-slot="{ ariaDescribedby }">
           <b-form-checkbox-group
@@ -54,7 +79,7 @@
         type="button"
         pill
         variant="primary"
-        class="mt-4"
+        class="mt-4 mb-4"
         @click="addNoticia()"
       >
         Adicionar noticia
@@ -65,48 +90,126 @@
 
 <script>
 import SidebarTitulo from '../../components/SidebarTitulo.vue'
-import Editor from '../../components/Editor'
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+import MyUploadAdapter from '@/plugins/UploadAdapter'
 
 export default {
   components: {
-    SidebarTitulo,
-    Editor
+    SidebarTitulo
+  },
+  props: {
+    model: {
+      type: String,
+      default: ''
+    }
   },
 
   data () {
     return {
       noticia: {
         titulo: '',
-        descricao: '',
+        cardImg: null,
         selecao: [],
         data: null,
-        autor: ''
+        autor: '',
+        editorData: ''
       },
+      imageData: null,
       opcoes: [
         { text: 'Ocultar', value: 'ocultar' },
         { text: 'Destaques', value: 'destaques' },
         { text: 'Notícia', value: 'noticia' },
         { text: 'Game', value: 'game' }
-      ]
+      ],
+      editor: ClassicEditor,
+      editorConfig: {
+        language: 'pt-br',
+        extraPlugins: [this.uploader],
+        heading: {
+          options: [
+            {
+              model: 'paragraph',
+              title: 'Paragraph',
+              class: 'ck-heading_paragraph'
+            },
+            {
+              model: 'heading1',
+              view: 'h1',
+              title: 'Heading 1',
+              class: 'ck-heading_heading1'
+            },
+            {
+              model: 'heading2',
+              view: 'h2',
+              title: 'Heading 2',
+              class: 'ck-heading_heading2'
+            }
+          ]
+        }
+      }
     }
   },
 
   methods: {
     addNoticia () {
       const noticia = this.$firebase.firestore().collection('noticias')
+      noticia
+        .add(this.noticia)
+        .then(docRef => {
+          console.log(docRef.id)
 
-      noticia.add(this.noticia).then((docRef) => {
-        console.log(docRef.id)
-      })
-      .catch((error) => {
-        console.error(error);
-      })
+          alert("Notícia Adicionada")
+        })
+        .catch(error => {
+          console.error(error)
+          alert('Usuário não autorizado!!!')
+        })
+    },
+
+    previewImage (event) {
+      this.noticia.cardImg = null
+      this.imageData = event.target.files[0]
+    },
+
+    onUpload () {
+      this.noticia.cardImg = null
+      const storageRef = this.$firebase
+        .storage()
+        .ref(`cards/${this.imageData.name}`)
+        .put(this.imageData)
+
+      storageRef.on(
+        `state_changed`,
+        snapshot => {
+          this.uploadValue =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        },
+        error => {
+          console.log(error.message)
+        },
+        () => {
+          this.uploadValue = 100
+          storageRef.snapshot.ref.getDownloadURL().then(url => {
+            this.noticia.cardImg = url
+          })
+        }
+      )
+    },
+
+    uploader (editor) {
+      editor.plugins.get('FileRepository').createUploadAdapter = loader => {
+        return new MyUploadAdapter(loader)
+      }
     }
   }
 }
 </script>
 
 <style scoped>
+img.preview {
+  width: 250px;
+}
+
 label {
   font-size: 20px;
   font-weight: 500;

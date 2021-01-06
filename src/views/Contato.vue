@@ -22,7 +22,7 @@
           <label for="nome" class="grey-text"> </label>
           <input
             type="text"
-            v-model="dados.nomeContato"
+            v-model="dados.nome"
             id="nome"
             class="form-control"
             placeholder="Digite Seu Nome"
@@ -35,7 +35,7 @@
           <label for="email" class="grey-text"></label>
           <input
             type="email"
-            v-model="dados.emailContato"
+            v-model="dados.email"
             id="email"
             class="form-control"
             placeholder="Digite Seu Email"
@@ -47,7 +47,7 @@
           <label for="telefone" class="grey-text"> </label>
           <input
             type="text"
-            v-model="dados.telefoneContato"
+            v-model="dados.telefone"
             id="telefone"
             class="form-control"
             placeholder="Digite Seu Telefone"
@@ -81,9 +81,9 @@ export default {
   data () {
     return {
       dados: {
-      nomeContato: '',
-      emailContato: '',
-      telefoneContato: '',
+      nome: '',
+      email: '',
+      telefone: '',
       mensagem: '',
       },
       msgSucesso: ''
@@ -91,12 +91,12 @@ export default {
   },
   methods: {
     enviarEmail() {
-      // console.log("Cadastro com sucessos", this.dados)
+      console.log("Cadastro com sucessos", this.dados)
       axios.post('https://radical-dreamers-api.herokuapp.com/', this.dados).then((retorno) => {
         this.msgSucesso = retorno.data;
-        this.dados.nomeContato = ''
-        this.dados.emailContato = ''
-        this.dados.telefoneContato = ''
+        this.dados.nome = ''
+        this.dados.email = ''
+        this.dados.telefone = ''
         this.dados.mensagem = ''
       }).catch((erro) => {
         console.error(erro)
