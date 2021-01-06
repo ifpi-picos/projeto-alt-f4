@@ -30,8 +30,7 @@
         <div class="col-md-4">
           <b-card
             title="Avelar"
-            img-src="https://firebasestorage.googleapis.com/v0/b/radical-dreamers-2020.appspot.com/o/cards%2FAVELAR.png?alt=media&token=98f01cf4-cff1-43e7-b1df-f93524a16daf"
-            img-alt="Image"
+            img-src="img/900X900/AVELAR.png"
             img-top
             tag="article"
             style="max-width: 20rem;"

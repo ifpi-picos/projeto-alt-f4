@@ -1,7 +1,7 @@
 <template>
   <div class="container-inicial">
     <sidebar-titulo nomeTitulo="Notícias"></sidebar-titulo>
-    <div class="container">
+    <div>
       <b-table striped hover :items="noticias"></b-table>
     </div>
   </div>
