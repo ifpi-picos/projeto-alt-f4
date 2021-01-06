@@ -15,7 +15,7 @@
         <div>
           <b-card-text>  <p>Card game online sobre os memes classicos</p> </b-card-text>
           <p><span>Postado por Cinthia Raquel em 11 de fevereiro de 2020 </span> </p>
-          <b-button href="/Noticia" variant="secondary">Noticia</b-button>
+          <b-button href="/noticia" variant="secondary">Noticia</b-button>
         </div>
         </b-card>
       </div>

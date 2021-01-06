@@ -30,12 +30,12 @@ const routes = [
         component: () => import('../views/Game.vue')
       },
       {
-        path: '/Noticias',
+        path: '/noticias',
         name: 'Noticias',
         component: () => import('../views/Noticias.vue')
       },
       {
-        path: '/Noticia/:id',
+        path: '/noticia/:id',
         name: 'Noticia',
         component: () => import('../views/Noticia.vue')
       },
