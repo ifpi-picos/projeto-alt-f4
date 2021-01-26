@@ -32,7 +32,8 @@ export default {
         .then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
             this.noticias.push(doc.data())
-            // console.log(doc.id, ' => ', doc.data())
+
+            console.log(doc.data())
           });
         })
         .catch((error) => {

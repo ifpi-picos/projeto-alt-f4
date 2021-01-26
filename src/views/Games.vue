@@ -16,51 +16,33 @@
     </section>
   </div>
 </template>
+
 <script>
 export default {
   data() {
     return {
-      cards: [
-        {
-          title: "Title 1",
-          id: 1,
-        },
-        {
-          title: "Title 2",
-          id: 2,
-        },
-        {
-          title: "Title 3",
-          id: 3,
-        },
-        {
-          title: "Title 4",
-          id: 4,
-        },
-        {
-          title: "Title 5",
-          id: 5,
-        },
-        {
-          title: "Title 6",
-          id: 6,
-        },
-        {
-          title: "Title 7",
-          id: 7,
-        },
-        {
-          title: "Title 8",
-          id: 8,
-        },
-      ],
+      cards: [],
     };
   },
   methods: {
     showDetails(id) {
       this.$router.push({ name: "Game", params: { id: id } });
     },
+
+    consultar () {
+      const cards = this.$firebase.firestore().collection('noticias')
+
+      cards.get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            var card = doc.data()
+            console.log(card)
+          });
+        })
+        .catch((error) => {
+          console.error(error);
+        })
+    }
   },
 };
 </script>
-<style scoped></style>

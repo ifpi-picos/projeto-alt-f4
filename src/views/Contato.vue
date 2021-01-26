@@ -92,6 +92,7 @@ export default {
   methods: {
     enviarEmail() {
       console.log("Cadastro com sucessos", this.dados)
+
       axios.post('https://radical-dreamers-api.herokuapp.com/', this.dados).then((retorno) => {
         this.msgSucesso = retorno.data;
         this.dados.nome = ''

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar sticky="true" toggleable="lg" type="dark" variant="primary" id="espaco">
+    <b-navbar toggleable="lg" type="dark" variant="primary" id="espaco" sticky>
       <b-img src="img/logo/logo1.png" width="35" height="35" class="mr-2 ml-4"></b-img>
       <b-navbar-brand to="/home">Radical Dreamers</b-navbar-brand>
 

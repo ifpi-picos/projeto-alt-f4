@@ -1,58 +1,72 @@
 <template>
   <div class="container">
     <section class="p-0 row justify-content-center">
-      <div v-for="card in cards" :key="card.id" class=" col-md-4 col-sm-12">
+      <div v-if="isLoading">
+        Carregando...
+      </div>
+
+      <div v-for="card in cards" :key="card.id" class="col-md-4 col-sm-12">
         <b-card
-          title="Meme card"
-          img-src="img/900X900/MEMEMCARDARENA.png"
-          img-alt="Image"
+          v-bind:img-src="card.cardImg"
+          v-bind:img-alt="card.titulo"
           img-top
           tag="article"
-          style="max-width: 20rem"
+          style="max-width: 20rem; cursor: pointer"
           class="mb-4"
           @click="showDetails(card.id)"
         >
-        <div>
-          <b-card-text>  <p>Card game online sobre os memes classicos</p> </b-card-text>
-          <p><span>Postado por Cinthia Raquel em 11 de fevereiro de 2020 </span> </p>
-          <b-button href="/noticia" variant="secondary">Noticia</b-button>
-        </div>
+          <h4>{{card.titulo}}</h4>
         </b-card>
       </div>
     </section>
   </div>
 </template>
+
 <script>
 export default {
   data() {
     return {
-      cards: [
-        {
-          title: "Title 1",
-          id: 1,
-          description:
-            "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        },
-        {
-          title: "Title 2",
-          id: 2,
-          description:
-            "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        },
-        {
-          title: "Title 3",
-          id: 3,
-          description:
-            "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        },
-        
-      ],
-    };
+      cards: [],
+      isLoading: true
+    }
   },
+
+  mounted() {
+    this.fetchCards()
+  },
+
   methods: {
     showDetails(id) {
-      this.$router.push({ name: "Noticia", params: { id: id } });
+      this.$router.push({ name: "Noticia", params: { id } });
     },
+
+    setLoading(state) {
+      if (typeof(state) !== 'boolean') {
+        return
+      }
+
+      this.isLoading = state
+    },
+
+    async fetchNoticias() {
+      return await this.$firebase.firestore().collection('noticias').get()
+    },
+
+    async fetchCards () {
+      try {
+        const cards = await this.fetchNoticias()
+
+        if (cards.length === 0) {
+          return
+        }
+
+        cards.forEach((card) => this.cards.push(card.data()))
+
+        this.setLoading(false)        
+      } catch (err) { 
+        console.log(err)
+      }
+    }
   },
 };
 </script>
@@ -64,7 +78,6 @@ export default {
 
   p span{
     font-size: 12px;
-    
   }
 
   b-card-text, p{
