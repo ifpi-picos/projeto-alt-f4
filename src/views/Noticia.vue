@@ -1,6 +1,8 @@
 <template>
   <div class="container-fluid">
-    {{noticia.id}}
+    {{noticias}}
+
+    <p ></p>
   </div>
 </template>
 
@@ -8,16 +10,47 @@
 export default {
   data () {
     return {
-
+      noticias: []
     }
   },
 
   mounted() {
-    
+    this.fetchNoticia()
   },
 
   methods: {
-    
+    async fetchNoticias () {
+      return await this.$firebase
+        .firestore()
+        .collection('noticias')
+        .get()
+    },
+
+    async fetchNoticia () {
+      try {
+        const noticias = await this.fetchNoticias()
+
+        if (noticias.length === 0) {
+          return
+        }
+
+        const Url = window.location.href
+
+        const idUrl = Url.split('noticia/')[1]
+
+        noticias.forEach(noticia => {
+          if(noticia.id === idUrl) {
+            console.log(noticia.data())
+
+            const ContentHtml = noticia.data().editorData.slice(1, -1)
+            this.noticias.push(noticia.data().editorData)
+          }
+        })
+
+      } catch (err) {
+        console.log(err)
+      }
+    }
   }
 }
 </script>

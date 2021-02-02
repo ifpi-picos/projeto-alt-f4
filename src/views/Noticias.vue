@@ -90,7 +90,6 @@ p span {
   font-size: 12px;
 }
 
-b-card-text,
 p {
   font-size: 20px;
 }
