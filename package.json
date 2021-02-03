@@ -32,5 +32,9 @@
     "sass-loader": "^8.0.2",
     "standard": "^16.0.3",
     "vue-template-compiler": "^2.6.11"
+  },
+  "devDependencies": {
+    "sass": "^1.32.6",
+    "sass-loader": "^10.1.1"
   }
 }

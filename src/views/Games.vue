@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <section class="row justify-content-center">
+    <section class="row">
       <div v-if="isLoading">
         <b-button variant="primary" disabled>
           <b-spinner small type="grow"></b-spinner>
