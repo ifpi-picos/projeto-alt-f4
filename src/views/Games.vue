@@ -1,6 +1,6 @@
 <template>
-  <div class="container-fluid">
-    <section class="row">
+  <div class="container">
+    <section class="p-0 row justify-content-center">
       <div v-if="isLoading">
         <b-button variant="primary" disabled>
           <b-spinner small type="grow"></b-spinner>
@@ -8,18 +8,18 @@
         </b-button>
       </div>
 
-      <div v-for="card in cards" :key="card.id" class="p-0 col-md-3 col-sm-6">
+      <div v-for="card in cards" :key="card.id" class="col-md-4 col-sm-12">
         <b-card
           v-bind:img-src="card.data().cardImg"
           v-bind:img-alt="card.data().titulo"
-          overlay
-          class="p-0 my-3 mx-5 border-light"
+          img-top
+          tag="article"
+          style="max-width: 18rem; cursor: pointer"
+          class="mb-4"
           @click="showDetails(card.id)"
-          style="cursor: pointer"
         >
         </b-card>
       </div>
-      <br />
     </section>
   </div>
 </template>
@@ -54,7 +54,7 @@ export default {
       return await this.$firebase
         .firestore()
         .collection('noticias')
-        .where('selecao', 'array-contains', 'game')
+        .where('selecao', 'array-contains', 'game') 
         .get()
     },
 
@@ -84,4 +84,5 @@ export default {
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
 </style>

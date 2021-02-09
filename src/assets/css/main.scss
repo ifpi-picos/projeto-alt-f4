@@ -1,0 +1,11 @@
+@font-face {
+  font-family: century-gothic;
+  src: url("/font/century-gothic.ttf");
+}
+
+*, 
+body, 
+textarea, 
+input {
+	font-family: century-gothic;
+}

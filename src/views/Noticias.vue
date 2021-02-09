@@ -14,7 +14,7 @@
           v-bind:img-alt="card.data().titulo"
           img-top
           tag="article"
-          style="max-width: 20rem; cursor: pointer"
+          style="max-width: 18rem; cursor: pointer"
           class="mb-4"
           @click="showDetails(card.id)"
         >
