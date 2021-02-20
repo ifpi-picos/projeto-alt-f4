@@ -97,12 +97,12 @@ export default {
   components: {
     SidebarTitulo
   },
-  props: {
-    model: {
-      type: String,
-      default: ''
-    }
-  },
+    props: {
+      model: {
+        type: String,
+        default: ''
+      }
+    },
 
   data () {
     return {
